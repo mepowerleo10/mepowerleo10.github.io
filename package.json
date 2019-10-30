@@ -1,0 +1,25 @@
+{
+  "name": "mepowerleo10.github.io",
+  "version": "1.0.0",
+  "description": "My Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mepowerleo10/mepowerleo10.github.io.git"
+  },
+  "keywords": [
+    "mepowerleo10",
+    "github",
+    "git",
+    "website"
+  ],
+  "author": "Mussa Mipawa (mepowerleo10@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mepowerleo10/mepowerleo10.github.io/issues"
+  },
+  "homepage": "https://github.com/mepowerleo10/mepowerleo10.github.io#readme"
+}
