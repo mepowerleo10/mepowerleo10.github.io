@@ -2,3 +2,80 @@ baseURL: http://mepowerleo10.github.io
 languageCode: en-us
 title: Mussa Mipawa Shomari | @mepowerleo10
 theme: "PaperMod"
+
+pageinate: 5
+enableEmoji: true
+pygmentsUseClasses: true
+
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+                - name: Search
+                  url: search/
+                  weight: 4
+                - name: Posts
+                  url: posts
+                  weight: 5
+                - name: Archive
+                  url: archives
+                  weight: 10
+                - name: Tags
+                  url: tags/
+                  weight: 10
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "A personal website"
+    author: Mussa Mipawa Shomari
+    ShowShareButtons: false
+    ShowToc: false
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowPostNavLinks: true
+    comments: true
+    homeInfoParams:
+      Title: Hi there 👋
+      Content: I write some *good* Java, Python, and Lua
+
+    profileMode:
+        enabled: true
+        title: Hi there 👋
+        subtitle: I write some *good* Java, Python, and Lua
+        imageUrl: https://avatars.githubusercontent.com/u/26873863?v=4
+        imageTitle: me
+        imageWidth: 120 # custom size
+        imageHeight: 120 # custom size
+        # buttons:
+        #     - name: Posts
+        #       url: "/posts"
+    socialIcons:
+        - name: Github
+          url: "https://github.com/mepowerleo10/"
+        - name: LinkedIn
+          url: "https://www.linkedin.com/in/mussashomari/"
+        - name: Twitter
+          url: "https://twitter.com/mepowerleo10"
+        - name: StackOverflow
+          url: "https://stackoverflow.com/users/10249671/mepowerleo10"
+        - name: Email
+          url: "mailto:mepowerleo10@gmail.com"
+
+    defaultTheme: auto
+    disableThemeToggle: false
+
+    cover:
+    #     hidden: true # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+    #     hiddenInSingle: true # hide on single page
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
