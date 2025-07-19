@@ -1,10 +1,18 @@
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import { Link } from "react-scroll";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
-const Hero = () => {
+const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) => {
+  const navRef = useRef<HTMLDivElement>(null);
+  const isNavVisible = useIntersectionObserver(navRef, { threshold: 0.1 });
+
+  setNavVisible(isNavVisible);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden tech-grid">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden tech-grid">
       {/* Background with hero image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -26,27 +34,15 @@ const Hero = () => {
             <span className="gradient-text">Mussa Mipawa Shomari</span>
           </h1>
           <div className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in delay-200">
-            <span className="text-primary">Software Developer</span> & <span className="text-accent">DevOps Engineer</span>
+            <span className="text-primary">Software Developer</span> | <span className="text-accent">DevOps Advocate</span> | <span className="text-primary">AI Integrator</span>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in delay-300">
-            Building scalable applications and robust infrastructure. 
-            Passionate about clean code, automation, and creating seamless user experiences.
+            Solving real-world problems through code, automation, and intelligence.
           </p>
         </div>
         
-        {/* Action buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in delay-500">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect transition-all duration-300 hover:scale-105">
-            <Download className="mr-2 h-4 w-4" />
-            Download Resume
-          </Button>
-          <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-            View Projects
-          </Button>
-        </div>
-        
         {/* Social links */}
-        <div className="flex justify-center space-x-6 animate-fade-in delay-700">
+        <div className="flex justify-center space-x-6 animate-fade-in delay-700 mb-8">
           <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
             <Github className="h-6 w-6" />
           </a>
@@ -56,6 +52,14 @@ const Hero = () => {
           <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
             <Mail className="h-6 w-6" />
           </a>
+        </div>
+        
+        {/* Nav links */}
+        <div ref={navRef} className="flex justify-center space-x-6 animate-fade-in delay-600 text-2xl">
+          <Link to="about" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">About</Link>
+          <Link to="projects" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Projects</Link>
+          <Link to="skills" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Skills</Link>
+          <Link to="contact" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Contact</Link>
         </div>
       </div>
       

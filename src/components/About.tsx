@@ -1,8 +1,16 @@
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Briefcase } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { cn } from "@/lib/utils";
 
 const About = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
+
   const experience = [
     {
       title: "Senior Software Developer",
@@ -39,8 +47,14 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-20 px-6">
+      <div
+        ref={ref}
+        className={cn(
+          "max-w-7xl mx-auto transition-opacity duration-1000 ease-in",
+          isIntersecting ? "opacity-100" : "opacity-0"
+        )}
+      >
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* About content */}
           <div>
@@ -64,12 +78,10 @@ const About = () => {
               </p>
               
               <div className="flex flex-wrap gap-3 mt-8">
-                <Badge variant="outline" className="text-primary border-primary/50 px-3 py-1">
-                  Available for hire
-                </Badge>
-                <Badge variant="outline" className="text-accent border-accent/50 px-3 py-1">
-                  Open to consulting
-                </Badge>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect transition-all duration-300 hover:scale-105">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </Button>
               </div>
             </div>
           </div>

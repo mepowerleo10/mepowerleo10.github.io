@@ -1,8 +1,14 @@
+import { useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Server, Cloud, Database, Terminal, Zap } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { cn } from "@/lib/utils";
 
 const Skills = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
+
   const devSkills = [
     { category: "Frontend", skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"], icon: Code },
     { category: "Backend", skills: ["Node.js", "Python", "Go", "PostgreSQL", "MongoDB"], icon: Database },
@@ -16,8 +22,14 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="py-20 px-6">
+      <div
+        ref={ref}
+        className={cn(
+          "max-w-7xl mx-auto transition-opacity duration-1000 ease-in",
+          isIntersecting ? "opacity-100" : "opacity-0"
+        )}
+      >
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             <span className="gradient-text">Skills & Expertise</span>

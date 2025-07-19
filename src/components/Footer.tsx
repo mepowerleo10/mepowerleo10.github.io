@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold gradient-text">Alex Johnson</h3>
+            <h3 className="text-xl font-bold gradient-text">Mussa Mipawa Shomari</h3>
             <p className="text-muted-foreground">
-              Software Developer & DevOps Engineer passionate about building scalable solutions.
+              Senior Software Developer | DevOps Advocate | AI Integrator passionate about building scalable solutions.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
@@ -52,16 +52,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Contact</h4>
             <div className="space-y-2 text-muted-foreground">
-              <p>San Francisco, CA</p>
-              <p>alex.johnson@email.com</p>
-              <p>+1 (555) 123-4567</p>
+              <p>Dar es Salaam, Tanzania</p>
+              <p>mussa.shomari10@gmail.com</p>
+              <p>+255 710 927 650</p>
             </div>
           </div>
         </div>
         
         <div className="border-t border-border/50 mt-12 pt-8 text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            © {currentYear} Alex Johnson. Made with <Heart className="h-4 w-4 text-red-500" /> using React & Tailwind CSS
+            © {currentYear} Mussa Mipawa Shomari. Made with <Heart className="h-4 w-4 text-red-500" /> using React & Tailwind CSS
           </p>
         </div>
       </div>

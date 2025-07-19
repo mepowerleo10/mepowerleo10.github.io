@@ -1,9 +1,15 @@
+import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Code, Server } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { cn } from "@/lib/utils";
 
 const Projects = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
+
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -70,8 +76,14 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-secondary/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-20 px-6 bg-secondary/20">
+      <div
+        ref={ref}
+        className={cn(
+          "max-w-7xl mx-auto transition-opacity duration-1000 ease-in",
+          isIntersecting ? "opacity-100" : "opacity-0"
+        )}
+      >
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             <span className="gradient-text">Featured Projects</span>

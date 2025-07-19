@@ -1,13 +1,25 @@
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { cn } from "@/lib/utils";
 
 const Contact = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
+
   return (
-    <section className="py-20 px-6 bg-secondary/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-6 bg-secondary/20">
+      <div
+        ref={ref}
+        className={cn(
+          "max-w-7xl mx-auto transition-opacity duration-1000 ease-in",
+          isIntersecting ? "opacity-100" : "opacity-0"
+        )}
+      >
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             <span className="gradient-text">Get In Touch</span>
@@ -37,7 +49,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">alex.johnson@email.com</p>
+                  <p className="text-muted-foreground">mussa.shomari10@gmail.com</p>
                 </div>
               </div>
               
@@ -47,7 +59,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+255 710 927 650</p>
                 </div>
               </div>
               
@@ -57,7 +69,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Dar es Salaam, Tanzania</p>
                 </div>
               </div>
             </div>
