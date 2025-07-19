@@ -1,9 +1,13 @@
 
 import { Link } from 'react-scroll';
-import { Home, User, Code, Briefcase, Mail, Presentation } from 'lucide-react';
+import { Home, User, Code, Briefcase, Mail, Presentation, Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from "./ui/button";
+import { useTheme } from "@/context/theme-provider";
 
 const FloatingNav = ({ isNavVisible }: { isNavVisible: boolean }) => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div
       className={cn(
@@ -12,6 +16,17 @@ const FloatingNav = ({ isNavVisible }: { isNavVisible: boolean }) => {
       )}
     >
       <div className="flex flex-col items-center space-y-4">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="p-3 bg-background/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer"
+        >
+          <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+        <div className="my-2" /> {/* Separator */}
         <Link to="hero" smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-3 bg-background/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
           <Home className="h-6 w-6" />
         </Link>
