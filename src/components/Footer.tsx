@@ -1,5 +1,5 @@
 import { communication } from "@/lib/settings";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,6 +32,7 @@ const Footer = () => {
             <h4 className="font-semibold">Quick Links</h4>
             <nav className="space-y-2">
               <a href="#about" className="block text-muted-foreground hover:text-primary transition-colors">About</a>
+              <a href="#experience" className="block text-muted-foreground hover:text-primary transition-colors">Experience</a>
               <a href="#skills" className="block text-muted-foreground hover:text-primary transition-colors">Skills</a>
               <a href="#projects" className="block text-muted-foreground hover:text-primary transition-colors">Projects</a>
               <a href="#contact" className="block text-muted-foreground hover:text-primary transition-colors">Contact</a>
