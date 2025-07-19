@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink, Code, Server } from "lucide-react";
+import { ExternalLink, Code, Server } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { cn } from "@/lib/utils";
 
@@ -16,36 +16,28 @@ const Projects = () => {
       description: "A modern, responsive Laravel-powered website for the ICT Commission of Tanzania. Features dynamic content management, media handling, and seamless government service integration.",
       type: "development",
       tech: ["Laravel", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
-      github: null,
-      demo: "https://ictc.go.tz/",
-      featured: false
+      demo: "https://ictc.go.tz/"
     },
     {
       title: "ICTC Event Management System (EMS)",
       description: "A robust web platform for organizing, publishing, and managing ICT-related events and registrations across Tanzania. Includes dynamic content management, participant tracking, and admin workflows.",
       type: "development",
       tech: ["Laravel", "Livewire", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
-      github: null,
-      demo: "https://ems.ictc.go.tz/event",
-      featured: false
+      demo: "https://ems.ictc.go.tz/event"
     },
     {
       title: "ZBS Quality Management System",
       description: "Enterprise-grade platform for managing product testing, importer registration, and compliance workflows for the Zanzibar Bureau of Standards. Integrates seamlessly with government systems via custom Express.js middlewares.",
       type: "development",
       tech: ["Yii2", "PHP", "Express.js", "JavaScript", "Tailwind CSS", "MySQL"],
-      github: null,
-      demo: "https://viwango.zbs.go.tz/",
-      featured: true
+      demo: "https://viwango.zbs.go.tz/"
     },
     {
       title: "DocoLoco",
       description: "GTK4 desktop app for browsing Dash docs & Linux man pages, packaged as Flatpak.",
       type: "development",
       tech: ["Linux", "Flatpak", "GTK4", "Python"],
-      github: "https://github.com/mepowerleo10/DocoLoco",
-      demo: null,
-      featured: false
+      demo: "https://github.com/mepowerleo10/DocoLoco"
     },
   ];
 
@@ -78,10 +70,10 @@ const Projects = () => {
       >
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">Featured Projects</span>
+            <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of development and infrastructure projects
+            A showcase of projects I've architected, led, or contributed to.
           </p>
         </div>
 
@@ -93,19 +85,18 @@ const Projects = () => {
             return (
               <Card
                 key={index}
-                className={`bg-gradient-card border-border/50 hover-scale transition-all duration-300 hover:shadow-glow ${project.featured ? 'ring-2 ring-primary/20' : ''
-                  }`}
+                className="bg-gradient-card border-border/50 hover-scale transition-all duration-300 hover:shadow-glow"
               >
-                <CardHeader>
+                <CardHeader className="relative">
                   <div className="flex items-start justify-between">
                     <div className={`p-2 bg-${colorClass}/20 rounded-lg`}>
                       <IconComponent className={`h-5 w-5 text-${colorClass}`} />
                     </div>
-                    {project.featured && (
-                      <Badge variant="outline" className="text-primary border-primary/50">
-                        Featured
-                      </Badge>
-                    )}
+                    <Button size="icon" variant="outline" className="rounded-full absolute top-4 right-4" asChild={true}>
+                      <a href={project.demo } target="blank">
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
                   </div>
                   <CardTitle className="text-xl">{project.title}</CardTitle>
                   <CardDescription className="text-muted-foreground leading-relaxed">
@@ -127,30 +118,7 @@ const Projects = () => {
                   </div>
                 </CardContent>
 
-                <CardFooter className="flex gap-3">
-                  {
-                    project.github ?
-                      <Button variant="outline" size="sm" className="flex-1" asChild={true}>
-                        <a href={project.github} target="blank" >
-                          <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </a>
-                      </Button>
-                      : <></>
-                  }
-
-                  {
-                    project.demo ?
-                      <Button size="sm" className="flex-1" asChild={true}>
-                        <a href={project.demo} target="blank">
-                          <ExternalLink href={project.demo} className="mr-2 h-4 w-4" />
-                          Demo
-                        </a>
-                      </Button>
-                      : <></>
-                  }
-
-                </CardFooter>
+                
               </Card>
             );
           })}
