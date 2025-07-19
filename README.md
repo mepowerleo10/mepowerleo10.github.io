@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# Mussa Mipawa Shomari - Personal Portfolio
 
-## Project info
+This is a personal portfolio website for Mussa Mipawa Shomari, showcasing his work as a Software Engineer, Developer, DevOps Engineer, and AI Developer.
 
-**URL**: https://lovable.dev/projects/2111d34e-194a-4697-a158-4b272c4d8617
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/2111d34e-194a-4697-a158-4b272c4d8617) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+-   **Vite**: A fast build tool that provides a lightning-fast development experience.
+-   **React**: A JavaScript library for building user interfaces.
+-   **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+-   **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
+-   **shadcn/ui**: A collection of reusable components built with Radix UI and Tailwind CSS.
 
-## How can I deploy this project?
+## Setup and Installation
 
-Simply open [Lovable](https://lovable.dev/projects/2111d34e-194a-4697-a158-4b272c4d8617) and click on Share -> Publish.
+To get this project up and running on your local machine, follow these steps:
 
-## Can I connect a custom domain to my Lovable project?
+### Prerequisites
 
-Yes, you can!
+Make sure you have Node.js and npm (Node Package Manager) installed on your system. You can download them from the official Node.js website or use a version manager like `nvm`.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Installation
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/mepowerleo10/mepowerleo10.github.io.git
+    cd mepowerleo10.github.io
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+## Running the Project
+
+### Development Mode
+
+To run the project in development mode with hot-reloading:
+
+```bash
+npm run dev
+```
+
+This will typically start the development server at `http://localhost:5173` (or another available port).
+
+### Building for Production
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+This command will compile and optimize your application for deployment, placing the output in the `dist` directory.
+
+### Previewing the Production Build
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+This will serve the contents of the `dist` directory, allowing you to test the production build before deployment.
+
+### Linting
+
+To run the linter and check for code style issues:
+
+```bash
+npm run lint
+```
