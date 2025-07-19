@@ -1,4 +1,4 @@
-import { communication } from "@/lib/communication";
+import { communication } from "@/lib/settings";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {

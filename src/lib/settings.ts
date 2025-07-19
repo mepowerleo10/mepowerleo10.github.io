@@ -5,3 +5,7 @@ export const communication = {
     phone: "+255 710 927 650",
     address: "Dar es Salaam, Tanzania",
 }
+
+export const formSpree = {
+    formLink: "https://formspree.io/f/meozoyyw",
+}

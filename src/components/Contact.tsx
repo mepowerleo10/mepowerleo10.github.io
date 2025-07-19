@@ -1,16 +1,82 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { cn } from "@/lib/utils";
-import { communication } from "@/lib/communication";
+import { communication, formSpree } from "@/lib/settings";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { useToast } from "@/hooks/use-toast";
+
+const formSchema = z.object({
+  fullName: z.string().min(1, "Full name is required"),
+  email: z.string().email("Invalid email address"),
+  projectType: z.string().min(1, "Please select a project type"),
+  message: z.string().min(1, "Message is required"),
+});
+
+type ContactFormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullName: "",
+      email: "",
+      projectType: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (values: ContactFormValues) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(formSpree.formLink, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...values,
+          _subject: `New message from ${values.fullName}`,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I will get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "There was an error sending your message. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+
 
   return (
     <section id="contact" className="py-20 px-6 bg-secondary/20">
@@ -89,47 +155,80 @@ const Contact = () => {
             <CardHeader>
               <CardTitle className="text-2xl">Send a Message</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+            <CardContent>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">First Name</label>
-                  <Input placeholder="John" className="bg-background/50" />
+                  <label htmlFor="fullName" className="text-sm font-medium">Your Name</label>
+                  <Input 
+                    id="fullName" 
+                    placeholder="Akilimali Mchapakazi" 
+                    className="bg-background/50" 
+                    {...form.register("fullName")} 
+                  />
+                  {form.formState.errors.fullName && (
+                    <p className="text-red-500 text-xs">{form.formState.errors.fullName.message}</p>
+                  )}
                 </div>
+                
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Last Name</label>
-                  <Input placeholder="Doe" className="bg-background/50" />
+                  <label htmlFor="email" className="text-sm font-medium">Email</label>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="akilimali.mchapakazi@example.com" 
+                    className="bg-background/50" 
+                    {...form.register("email")} 
+                  />
+                  {form.formState.errors.email && (
+                    <p className="text-red-500 text-xs">{form.formState.errors.email.message}</p>
+                  )}
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Email</label>
-                <Input type="email" placeholder="john@example.com" className="bg-background/50" />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Project Type</label>
-                <select className="w-full p-3 bg-background/50 border border-input rounded-md text-foreground">
-                  <option>Select project type</option>
-                  <option>Web Development</option>
-                  <option>Mobile App</option>
-                  <option>DevOps Consulting</option>
-                  <option>Infrastructure Setup</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Message</label>
-                <Textarea 
-                  placeholder="Tell me about your project..." 
-                  className="bg-background/50 min-h-[120px]" 
-                />
-              </div>
-              
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glow-effect">
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
-              </Button>
+                
+                <div className="space-y-2">
+                  <label htmlFor="projectType" className="text-sm font-medium">Project Type</label>
+                  <select 
+                    id="projectType" 
+                    className="w-full p-3 bg-background/50 border border-input rounded-md text-foreground"
+                    {...form.register("projectType")}
+                  >
+                    <option value="">Select project type</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile App">Mobile App</option>
+                    <option value="DevOps Consulting">DevOps Consulting</option>
+                    <option value="Infrastructure Setup">Infrastructure Setup</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {form.formState.errors.projectType && (
+                    <p className="text-red-500 text-xs">{form.formState.errors.projectType.message}</p>
+                  )}
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium">Message</label>
+                  <Textarea 
+                    id="message"
+                    placeholder="Tell me about your project..." 
+                    className="bg-background/50 min-h-[120px]" 
+                    {...form.register("message")} 
+                  />
+                  {form.formState.errors.message && (
+                    <p className="text-red-500 text-xs">{form.formState.errors.message.message}</p>
+                  )}
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glow-effect"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="mr-2 h-4 w-4" />
+                  )}
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>

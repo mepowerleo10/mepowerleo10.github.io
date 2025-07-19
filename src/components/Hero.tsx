@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, Download, Phone } from "lucide-react";
 import heroImage from "@/assets/me.jpg";
 import { Link } from "react-scroll";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { communication } from "@/lib/communication";
+import { communication } from "@/lib/settings";
 
 const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) => {
   const navRef = useRef<HTMLDivElement>(null);
