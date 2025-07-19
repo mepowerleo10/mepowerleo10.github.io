@@ -67,7 +67,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
             </div>
             
             {/* Nav links */}
-            <div ref={navRef} className="flex justify-center lg:justify-start space-x-6 animate-fade-in delay-600 text-lg">
+            <div ref={navRef} className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 animate-fade-in delay-600 text-lg">
               <Link to="about" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">About</Link>
               <Link to="experience" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Experience</Link>
               <Link to="projects" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Projects</Link>
