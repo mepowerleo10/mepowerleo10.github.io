@@ -77,7 +77,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
           </div>
           
           {/* Hero image */}
-          <div className="flex justify-center lg:justify-end animate-fade-in delay-500">
+          <div className="hidden lg:flex justify-center lg:justify-end animate-fade-in delay-500">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse-glow"></div>
               <img 

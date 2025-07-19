@@ -3,7 +3,8 @@ import { Download } from "lucide-react";
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { cn } from "@/lib/utils";
-import Experience from "./Experience";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { myDocuments } from "@/lib/settings";
 
 const About = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ const About = () => {
 
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I'm a software engineer and DevOps lead with 3+ years of experience building scalable systems, leading teams, and delivering products that drive revenue and serve thousands daily. 
+            I'm a software engineer and DevOps lead with 3+ years of experience building scalable systems, leading teams, and delivering products that drive revenue and serve thousands daily.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -39,10 +40,35 @@ const About = () => {
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect transition-all duration-300 hover:scale-105">
-              <Download className="mr-2 h-4 w-4" />
-              Download Resume
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect transition-all duration-300 hover:scale-105">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl h-[90vh] p-0 gap-0 flex flex-col">
+                <DialogHeader className="p-4">
+                  <DialogTitle>Mussa Mipawa Shomari's Curriculum Vitae</DialogTitle>
+                </DialogHeader>
+                <iframe
+                  src={`https://drive.google.com/file/d/${myDocuments.cvId}/preview`}
+                  width="100%"
+                  height="100%"
+                  className="border-none flex-grow"
+                ></iframe>
+                <a
+                  href={`https://drive.google.com/uc?export=download&id=${myDocuments.cvId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-4 right-4 z-10"
+                >
+                  <Button size="icon" className="rounded-full shadow-lg">
+                    <Download className="h-5 w-5" />
+                  </Button>
+                </a>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

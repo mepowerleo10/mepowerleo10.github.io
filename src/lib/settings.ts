@@ -9,3 +9,7 @@ export const communication = {
 export const formSpree = {
     formLink: "https://formspree.io/f/meozoyyw",
 }
+
+export const myDocuments = {
+    cvId: "1O7W-Ps-2w8C5TAfBKisRF_LA3qtnap5r",
+}
