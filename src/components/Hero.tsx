@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Download, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import heroImage from "@/assets/me.jpg";
 import { Link } from "react-scroll";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { communication } from "@/lib/settings";
+import TypewriterEffect from "./ui/typewriter-effect";
 
 const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) => {
   const navRef = useRef<HTMLDivElement>(null);
@@ -37,9 +37,14 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
               <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
                 <span className="gradient-text">Mussa Mipawa Shomari</span>
               </h1>
-              <div className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in delay-200">
-                <span className="text-primary">Software Engineer</span> | <span className="text-accent">DevOps Advocate</span> | <span className="text-primary">AI Integrator</span>
-              </div>
+              <TypewriterEffect
+                words={[
+                  { text: "Software Engineer", className: "text-primary" },
+                  { text: "DevOps Engineer", className: "text-accent" },
+                  { text: "AI Integrator", className: "text-primary" },
+                ]}
+                className="text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]"
+              />
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-300">
                 Solving real-world problems through code, automation, and intelligence.
               </p>
