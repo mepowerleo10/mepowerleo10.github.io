@@ -9,23 +9,23 @@ const About = () => {
       company: "ICTPACK Solutions Ltd.",
       period: "Apr 2024 - Present",
       location: "Dar es Salaam, TZ",
-      description: "Promoted to Senior Developer and recruited a team of 2 Software Developers. Coordinated development of ECTS mobile app generating TSH 200+ Million in sales. Led migration from Google Cloud to on-premise, saving $100+ monthly. Honoured as Most Innovative Individual in Q2 2024.",
-      skills: ["Team Leadership", "Mobile Development", "Cloud Migration", "Project Management"]
+      description: "Responsible for recruitment of Software Developers. Coordinated development of ECTS mobile app generating TSH 200+ Million in sales. Headed team of 3 in migrating projects from Google Cloud, saving $100+ monthly. Core developer in Testing & Quality Management platform serving 5,000+ importers monthly in Zanzibar.",
+      skills: ["Team Leadership", "Mobile Development", "Cloud Migration", "Quality Management"]
     },
     {
       title: "Software Developer",
       company: "ICTPACK Solutions Ltd.",
       period: "May 2022 - Apr 2024",
       location: "Dar es Salaam, TZ",
-      description: "Learned Java Netty, WebSockets API and ReactJS within a month to deliver TANAPA platform tracking 2,000+ vehicles. Migrated to self-hosted GitLab saving $2,000+ annually. Introduced DevOps practices reducing deployment time from 3-5 days to 2 hours.",
-      skills: ["Java Netty", "ReactJS", "WebSockets", "DevOps", "GitLab", "Fleet Management"]
+      description: "Learned Java Netty, WebSockets API and ReactJS within a month for TANAPA platform tracking 2,000+ vehicles. Migrated to self-hosted GitLab saving $2,000+ annually. Introduced DevOps practices reducing deployment from 3-5 days to 2 hours, onboarding time by 50%, and manual testing by 20+ hours per project.",
+      skills: ["Java Netty", "ReactJS", "WebSockets", "DevOps", "GitLab", "Automation"]
     },
     {
       title: "Field Sales Officer",
       company: "Vodacom Tanzania Plc. via NANINE",
       period: "Feb 2022 - May 2022",
       location: "Dar es Salaam, TZ",
-      description: "Recruited 60+ SMEs to use Lipa Kwa Simu payment service. Built custom automation tools for data extraction and business intelligence. Prepared monthly performance reports for SME activation campaigns.",
+      description: "Recruited 60+ SMEs to use Lipa Kwa Simu payment service. Built custom automation tool for data extraction and business intelligence. Prepared monthly performance reports for SME activation campaigns.",
       skills: ["Business Development", "Data Automation", "Customer Support", "Analytics"]
     },
     {
