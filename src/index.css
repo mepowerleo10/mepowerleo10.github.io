@@ -151,6 +151,11 @@ All colors MUST be HSL.
     transform: scale(1.05);
   }
   
+  /* Active navigation link style */
+  .active-nav-link {
+    @apply bg-primary text-primary-foreground transition-colors duration-500 !important;
+  }
+
   /* Tech grid pattern */
   .tech-grid {
     background-image: 

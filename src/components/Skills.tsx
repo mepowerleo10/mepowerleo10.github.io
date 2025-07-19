@@ -10,14 +10,14 @@ const Skills = () => {
   const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
 
   const devSkills = [
-    { category: "Frontend", skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"], icon: Code },
-    { category: "Backend", skills: ["Node.js", "Python", "Go", "PostgreSQL", "MongoDB"], icon: Database },
-    { category: "Mobile", skills: ["React Native", "Flutter", "Swift", "Kotlin"], icon: Zap }
+    { category: "Frontend", skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTMX"], icon: Code },
+    { category: "Backend", skills: ["Java", "Node.js", "Python", "PHP", "PostgreSQL", "MongoDB", "Neo4J"], icon: Database },
+    { category: "Mobile", skills: ["Java", "Flutter", "Swift", "Kotlin"], icon: Zap }
   ];
 
   const devopsSkills = [
     { category: "Cloud", skills: ["AWS", "Google Cloud", "Azure", "DigitalOcean"], icon: Cloud },
-    { category: "DevOps", skills: ["Docker", "Kubernetes", "Jenkins", "GitLab CI", "Terraform"], icon: Server },
+    { category: "DevOps", skills: ["Docker", "Kubernetes", "Jenkins", "GitLab CI", "Ansible"], icon: Server },
     { category: "Monitoring", skills: ["Prometheus", "Grafana", "ELK Stack", "DataDog"], icon: Terminal }
   ];
 
