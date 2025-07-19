@@ -92,9 +92,9 @@ const Projects = () => {
                     <div className={`p-2 bg-${colorClass}/20 rounded-lg`}>
                       <IconComponent className={`h-5 w-5 text-${colorClass}`} />
                     </div>
-                    <Button size="icon" variant="outline" className="rounded-full absolute top-4 right-4" asChild={true}>
+                    <Button size="icon" variant="link" className="rounded-full absolute top-5 right-5" asChild={true}>
                       <a href={project.demo } target="blank">
-                        <ExternalLink className="h-4 w-4" />
+                        <ExternalLink className="h-5 w-5" />
                       </a>
                     </Button>
                   </div>
