@@ -156,11 +156,11 @@ const Projects = () => {
           })}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
             View All Projects
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
