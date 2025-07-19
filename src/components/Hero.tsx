@@ -73,7 +73,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
               <img 
                 src={heroImage} 
                 alt="Mussa Mipawa Shomari" 
-                className="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-primary/30 shadow-glow hover-scale"
+                className="relative w-80 h-80 md:w-96 md:h-96 object-cover object-top rounded-full border-4 border-primary/30 shadow-glow hover-scale"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-t from-background/20 to-transparent"></div>
             </div>
