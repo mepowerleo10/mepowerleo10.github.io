@@ -5,28 +5,36 @@ import { Calendar, MapPin, Briefcase } from "lucide-react";
 const About = () => {
   const experience = [
     {
-      title: "Senior Full-Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
-      description: "Lead development of scalable web applications serving 1M+ users. Architected microservices infrastructure and mentored junior developers.",
-      skills: ["React", "Node.js", "AWS", "Kubernetes"]
-    },
-    {
-      title: "DevOps Engineer",
-      company: "CloudFirst Inc.",
-      period: "2020 - 2022",
-      location: "Austin, TX",
-      description: "Designed and implemented CI/CD pipelines, reduced deployment time by 80%. Managed multi-cloud infrastructure with 99.9% uptime.",
-      skills: ["Docker", "Terraform", "Jenkins", "Monitoring"]
+      title: "Senior Software Developer",
+      company: "ICTPACK Solutions Ltd.",
+      period: "Apr 2024 - Present",
+      location: "Dar es Salaam, TZ",
+      description: "Promoted to Senior Developer and recruited a team of 2 Software Developers. Coordinated development of ECTS mobile app generating TSH 200+ Million in sales. Led migration from Google Cloud to on-premise, saving $100+ monthly. Honoured as Most Innovative Individual in Q2 2024.",
+      skills: ["Team Leadership", "Mobile Development", "Cloud Migration", "Project Management"]
     },
     {
       title: "Software Developer",
-      company: "StartupLab",
-      period: "2018 - 2020",
-      location: "Boston, MA",
-      description: "Developed mobile applications and web platforms. Collaborated closely with design and product teams to deliver user-centric solutions.",
-      skills: ["React Native", "Python", "PostgreSQL", "Git"]
+      company: "ICTPACK Solutions Ltd.",
+      period: "May 2022 - Apr 2024",
+      location: "Dar es Salaam, TZ",
+      description: "Learned Java Netty, WebSockets API and ReactJS within a month to deliver TANAPA platform tracking 2,000+ vehicles. Migrated to self-hosted GitLab saving $2,000+ annually. Introduced DevOps practices reducing deployment time from 3-5 days to 2 hours.",
+      skills: ["Java Netty", "ReactJS", "WebSockets", "DevOps", "GitLab", "Fleet Management"]
+    },
+    {
+      title: "Field Sales Officer",
+      company: "Vodacom Tanzania Plc. via NANINE",
+      period: "Feb 2022 - May 2022",
+      location: "Dar es Salaam, TZ",
+      description: "Recruited 60+ SMEs to use Lipa Kwa Simu payment service. Built custom automation tools for data extraction and business intelligence. Prepared monthly performance reports for SME activation campaigns.",
+      skills: ["Business Development", "Data Automation", "Customer Support", "Analytics"]
+    },
+    {
+      title: "Software Engineering Intern",
+      company: "Ubuni Soluciones Ltd.",
+      period: "Sep 2021 - Jan 2022",
+      location: "Dar es Salaam, TZ",
+      description: "Learned Ruby on Rails within a week with no prior experience. Designed REST API with JWT Authentication for Android application. Acted as SCRUM master for remote team of 5 developers.",
+      skills: ["Ruby on Rails", "REST API", "JWT Authentication", "SCRUM", "Android"]
     }
   ];
 
@@ -42,17 +50,17 @@ const About = () => {
             
             <div className="prose prose-lg prose-invert max-w-none">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I'm a passionate software developer and DevOps engineer with over 6 years of experience 
-                building and scaling applications that serve millions of users. My journey started with 
-                curiosity about how things work under the hood, which led me to master both the art of 
-                clean code and the science of reliable infrastructure.
+                I'm a passionate software developer and DevOps engineer with over 3 years of experience 
+                building enterprise applications and leading development teams. My journey began as an intern 
+                learning Ruby on Rails, and quickly evolved into leading teams that deliver solutions generating 
+                millions in revenue and serving thousands of users daily.
               </p>
               
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I believe in the power of automation, the importance of monitoring, and the beauty of 
-                well-architected systems. When I'm not coding or configuring infrastructure, you can 
-                find me contributing to open-source projects, writing technical articles, or exploring 
-                the latest in cloud-native technologies.
+                I specialize in rapid learning and implementation, having mastered technologies like Java Netty, 
+                WebSockets, and ReactJS within weeks to deliver critical business solutions. My expertise spans 
+                from mobile development and fleet management systems to DevOps practices that have dramatically 
+                reduced deployment times and costs for organizations.
               </p>
               
               <div className="flex flex-wrap gap-3 mt-8">
