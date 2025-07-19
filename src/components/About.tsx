@@ -10,7 +10,7 @@ const About = () => {
   const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
 
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="min-h-screen py-20 px-6 flex items-center justify-center">
       <div
         ref={ref}
         className={cn(
@@ -27,13 +27,11 @@ const About = () => {
 
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I'm a results-driven Software Engineer and DevOps Lead with 3+ years of experience architecting scalable enterprise systems, leading agile teams, and shipping high-impact products.
-            From launching as a Ruby on Rails intern to leading development on platforms that power millions in revenue and serve thousands daily—my journey has been fast, focused, and deeply technical.
+            I'm a software engineer and DevOps lead with 3+ years of experience building scalable systems, leading teams, and delivering products that drive revenue and serve thousands daily. 
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I thrive in high-stakes environments where rapid learning and execution are critical.
-            I've ramped up on complex stacks like Java Netty, WebSockets, and ReactJS in record time to ship production-grade solutions under pressure. My core strengths span mobile development, cloud infrastructure, and DevOps automation—cutting deployment times from days to hours, and significantly lowering operational costs.
+            I specialize in rapid execution—mastering complex tech like Java Netty and ReactJS in weeks to ship mission-critical solutions. From mobile apps to DevOps automation, I build fast, lead boldly, and deliver real impact.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
