@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Phone } from "lucide-react";
 import heroImage from "@/assets/me.jpg";
 import { Link } from "react-scroll";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { communication } from "@/lib/communication";
 
 const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) => {
   const navRef = useRef<HTMLDivElement>(null);
@@ -37,7 +38,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
                 <span className="gradient-text">Mussa Mipawa Shomari</span>
               </h1>
               <div className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in delay-200">
-                <span className="text-primary">Software Developer</span> | <span className="text-accent">DevOps Advocate</span> | <span className="text-primary">AI Integrator</span>
+                <span className="text-primary">Software Engineer</span> | <span className="text-accent">DevOps Advocate</span> | <span className="text-primary">AI Integrator</span>
               </div>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-300">
                 Solving real-world problems through code, automation, and intelligence.
@@ -46,14 +47,17 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
             
             {/* Social links */}
             <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in delay-700 mb-8">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.github} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.linkedin} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={`mailto:${communication.email}`} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Mail className="h-6 w-6" />
+              </a>
+              <a href={`tel:${communication.phone}`} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+                <Phone className="h-6 w-6" />
               </a>
             </div>
             
@@ -73,7 +77,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
               <img 
                 src={heroImage} 
                 alt="Mussa Mipawa Shomari" 
-                className="relative w-80 h-80 md:w-96 md:h-96 object-cover object-top rounded-full border-4 border-primary/30 shadow-glow hover-scale"
+                className="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-primary/30 shadow-glow hover-scale"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-t from-background/20 to-transparent"></div>
             </div>

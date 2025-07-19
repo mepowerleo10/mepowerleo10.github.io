@@ -12,62 +12,54 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with microservices architecture, real-time inventory management, and automated deployment pipeline.",
+      title: "ICTC Website and CMS",
+      description: "A modern, responsive Laravel-powered website for the ICT Commission of Tanzania. Features dynamic content management, media handling, and seamless government service integration.",
       type: "development",
-      tech: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
-      github: "#",
-      demo: "#",
+      tech: ["Laravel", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
+      github: null,
+      demo: "https://ictc.go.tz/",
+      featured: false
+    },
+    {
+      title: "ICTC Event Management System (EMS)",
+      description: "A robust web platform for organizing, publishing, and managing ICT-related events and registrations across Tanzania. Includes dynamic content management, participant tracking, and admin workflows.",
+      type: "development",
+      tech: ["Laravel", "Livewire", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
+      github: null,
+      demo: "https://ems.ictc.go.tz/event",
+      featured: false
+    },
+    {
+      title: "ZBS Quality Management System",
+      description: "Enterprise-grade platform for managing product testing, importer registration, and compliance workflows for the Zanzibar Bureau of Standards. Integrates seamlessly with government systems via custom Express.js middlewares.",
+      type: "development",
+      tech: ["Yii2", "PHP", "Express.js", "JavaScript", "Tailwind CSS", "MySQL"],
+      github: null,
+      demo: "https://viwango.zbs.go.tz/",
       featured: true
     },
     {
-      title: "DevOps Automation Suite",
-      description: "Complete CI/CD pipeline automation with infrastructure as code, monitoring, and auto-scaling capabilities.",
-      type: "devops",
-      tech: ["Terraform", "Kubernetes", "Jenkins", "Prometheus", "AWS"],
-      github: "#",
-      demo: "#",
-      featured: true
-    },
-    {
-      title: "Real-time Analytics Dashboard",
-      description: "High-performance dashboard processing millions of events with real-time visualizations and alerting system.",
+      title: "DocoLoco",
+      description: "GTK4 desktop app for browsing Dash docs & Linux man pages, packaged as Flatpak.",
       type: "development",
-      tech: ["Next.js", "Python", "Redis", "WebSockets", "D3.js"],
-      github: "#",
-      demo: "#",
+      tech: ["Linux", "Flatpak", "GTK4", "Python"],
+      github: "https://github.com/mepowerleo10/DocoLoco",
+      demo: null,
       featured: false
     },
-    {
-      title: "Multi-Cloud Infrastructure",
-      description: "Hybrid cloud infrastructure spanning AWS, GCP, and Azure with automated failover and cost optimization.",
-      type: "devops",
-      tech: ["Terraform", "Ansible", "Kubernetes", "Istio", "Grafana"],
-      github: "#",
-      demo: "#",
-      featured: false
-    },
-    {
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with biometric authentication and real-time transaction processing.",
-      type: "development",
-      tech: ["React Native", "Node.js", "MongoDB", "JWT", "Stripe"],
-      github: "#",
-      demo: "#",
-      featured: false
-    },
-    {
-      title: "Container Orchestration Platform",
-      description: "Custom container orchestration platform with auto-scaling, service mesh, and comprehensive monitoring.",
-      type: "devops",
-      tech: ["Go", "Kubernetes", "Istio", "Helm", "Prometheus"],
-      github: "#",
-      demo: "#",
-      featured: false
-    }
   ];
 
   const getProjectIcon = (type: string) => {
+    var icon = null;
+    switch (type) {
+      case "devops":
+        icon = Server;
+        break;
+      case "development":
+      default:
+        icon = Code;
+        break;
+    }
     return type === "development" ? Code : Server;
   };
 
@@ -92,18 +84,17 @@ const Projects = () => {
             A showcase of development and infrastructure projects
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             const IconComponent = getProjectIcon(project.type);
             const colorClass = getProjectColor(project.type);
-            
+
             return (
-              <Card 
-                key={index} 
-                className={`bg-gradient-card border-border/50 hover-scale transition-all duration-300 hover:shadow-glow ${
-                  project.featured ? 'ring-2 ring-primary/20' : ''
-                }`}
+              <Card
+                key={index}
+                className={`bg-gradient-card border-border/50 hover-scale transition-all duration-300 hover:shadow-glow ${project.featured ? 'ring-2 ring-primary/20' : ''
+                  }`}
               >
                 <CardHeader>
                   <div className="flex items-start justify-between">
@@ -121,13 +112,13 @@ const Projects = () => {
                     {project.description}
                   </CardDescription>
                 </CardHeader>
-                
+
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
-                      <Badge 
-                        key={techIndex} 
-                        variant="secondary" 
+                      <Badge
+                        key={techIndex}
+                        variant="secondary"
                         className={`bg-${colorClass}/10 text-${colorClass} border-${colorClass}/20 text-xs`}
                       >
                         {tech}
@@ -135,22 +126,36 @@ const Projects = () => {
                     ))}
                   </div>
                 </CardContent>
-                
+
                 <CardFooter className="flex gap-3">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Button>
-                  <Button size="sm" className="flex-1">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </Button>
+                  {
+                    project.github ?
+                      <Button variant="outline" size="sm" className="flex-1" asChild={true}>
+                        <a href={project.github} target="blank" >
+                          <Github className="mr-2 h-4 w-4" />
+                          Code
+                        </a>
+                      </Button>
+                      : <></>
+                  }
+
+                  {
+                    project.demo ?
+                      <Button size="sm" className="flex-1" asChild={true}>
+                        <a href={project.demo} target="blank">
+                          <ExternalLink href={project.demo} className="mr-2 h-4 w-4" />
+                          Demo
+                        </a>
+                      </Button>
+                      : <></>
+                  }
+
                 </CardFooter>
               </Card>
             );
           })}
         </div>
-        
+
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
             View All Projects

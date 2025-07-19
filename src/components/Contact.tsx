@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { cn } from "@/lib/utils";
+import { communication } from "@/lib/communication";
 
 const Contact = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -49,7 +50,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">mussa.shomari10@gmail.com</p>
+                  <p className="text-muted-foreground"><a href={`mailto:${communication.email}`}>{communication.email}</a></p>
                 </div>
               </div>
               
@@ -59,7 +60,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-muted-foreground">+255 710 927 650</p>
+                  <p className="text-muted-foreground"><a href={`tel:${communication.phone}`}>{communication.phone}</a></p>
                 </div>
               </div>
               
@@ -69,7 +70,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-muted-foreground">Dar es Salaam, Tanzania</p>
+                  <p className="text-muted-foreground">{communication.address}</p>
                 </div>
               </div>
             </div>

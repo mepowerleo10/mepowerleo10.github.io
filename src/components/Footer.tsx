@@ -1,3 +1,4 @@
+import { communication } from "@/lib/communication";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
@@ -11,16 +12,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-bold gradient-text">Mussa Mipawa Shomari</h3>
             <p className="text-muted-foreground">
-              Senior Software Developer | DevOps Advocate | AI Integrator passionate about building scalable solutions.
+              An engineer passionate about building scalable solutions.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.github} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.linkedin} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={`mailto:${communication.email}`} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Mail className="h-5 w-5" />
               </a>
             </div>
@@ -52,16 +53,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Contact</h4>
             <div className="space-y-2 text-muted-foreground">
-              <p>Dar es Salaam, Tanzania</p>
-              <p>mussa.shomari10@gmail.com</p>
-              <p>+255 710 927 650</p>
+              <p>{communication.address}</p>
+              <p>{communication.email}</p>
+              <p>{communication.phone}</p>
             </div>
           </div>
         </div>
         
         <div className="border-t border-border/50 mt-12 pt-8 text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            © {currentYear} Mussa Mipawa Shomari. Made with <Heart className="h-4 w-4 text-red-500" /> using React & Tailwind CSS
+            © {currentYear} Mussa Mipawa Shomari
           </p>
         </div>
       </div>
