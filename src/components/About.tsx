@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { myDocuments } from "@/lib/settings";
+import { Spinner } from "@/components/ui/spinner";
 
 const About = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <section id="about" className="min-h-screen py-20 px-6 flex items-center justify-center">
@@ -40,7 +42,7 @@ const About = () => {
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8">
-            <Dialog>
+            <Dialog onOpenChange={(open) => !open && setIsLoading(true)}>
               <DialogTrigger asChild>
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect transition-all duration-300 hover:scale-105">
                   <Download className="mr-2 h-4 w-4" />
@@ -51,12 +53,20 @@ const About = () => {
                 <DialogHeader className="p-4">
                   <DialogTitle>Mussa Mipawa Shomari's Curriculum Vitae</DialogTitle>
                 </DialogHeader>
-                <iframe
-                  src={`https://drive.google.com/file/d/${myDocuments.cvId}/preview`}
-                  width="100%"
-                  height="100%"
-                  className="border-none flex-grow"
-                ></iframe>
+                <div className="flex-grow relative">
+                  {isLoading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-background z-10">
+                      <Spinner className="h-12 w-12" />
+                    </div>
+                  )}
+                  <iframe
+                    src={`https://drive.google.com/file/d/${myDocuments.cvId}/preview`}
+                    width="100%"
+                    height="100%"
+                    className={cn("border-none", isLoading && "invisible")}
+                    onLoad={() => setIsLoading(false)}
+                  ></iframe>
+                </div>
                 <a
                   href={`https://drive.google.com/uc?export=download&id=${myDocuments.cvId}`}
                   target="_blank"
