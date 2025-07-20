@@ -15,13 +15,13 @@ const Footer = () => {
               An engineer passionate about building scalable solutions.
             </p>
             <div className="flex space-x-4">
-              <a href={communication.github} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Github className="h-5 w-5" />
               </a>
-              <a href={communication.linkedin} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.linkedin} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href={`mailto:${communication.email}`} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={`mailto:${communication.email}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Mail className="h-5 w-5" />
               </a>
             </div>

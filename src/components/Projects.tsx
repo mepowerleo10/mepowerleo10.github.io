@@ -93,7 +93,7 @@ const Projects = () => {
                       <IconComponent className={`h-5 w-5 text-${colorClass}`} />
                     </div>
                     <Button size="icon" variant="link" className="rounded-full absolute top-5 right-5" asChild={true}>
-                      <a href={project.demo } target="blank">
+                      <a href={project.demo } target="_blank">
                         <ExternalLink className="h-5 w-5" />
                       </a>
                     </Button>

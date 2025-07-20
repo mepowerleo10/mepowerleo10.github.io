@@ -10,56 +10,56 @@ const Experience = () => {
   const isIntersecting = useIntersectionObserver(ref, { threshold: 0.1 });
 
   const experience = [
-  {
-    title: "Senior Software Developer & Technical Lead",
-    company: "ICTPACK Solutions Ltd.",
-    period: "Apr 2024 – Present",
-    location: "Dar es Salaam, TZ",
-    description: [
-      "Building and leading a high-performing engineering team.",
-      "Architected ECTS mobile platform, generating TSH 200M+ in revenue.",
-      "Led cloud migration from GCP, reducing costs by 40%.",
-      "Engineered scalable systems for 5,000+ monthly importers in Zanzibar."
-    ],
-    skills: ["Technical Leadership", "System Design", "Cloud Architecture", "AI Strategy", "Mobile Platforms"]
-  },
-  {
-    title: "Software Developer & DevOps Advocate",
-    company: "ICTPACK Solutions Ltd.",
-    period: "May 2022 – Apr 2024",
-    location: "Dar es Salaam, TZ",
-    description: [
-      "Delivered full-stack solution for TANAPA, tracking 2,000+ vehicles.",
-      "Built CI/CD pipelines, reducing deploy time from 5 days to 2 hours.",
-      "Migrated to self-hosted GitLab, saving $2,000+ annually.",
-      "Streamlined QA, cutting 20+ hours of manual testing per project."
-    ],
-    skills: ["Full-Stack Development", "DevOps", "Automation", "Cost Optimization"]
-  },
-  {
-    title: "Field Sales Officer & Automation Builder",
-    company: "Vodacom Tanzania Plc. via NANINE",
-    period: "Feb 2022 – May 2022",
-    location: "Dar es Salaam, TZ",
-    description: [
-      "Onboarded 60+ SMEs to Vodacom’s Lipa Kwa Simu service.",
-      "Built automation tool for campaign data and performance insights.",
-      "Produced executive reports for SME activations."
-    ],
-    skills: ["Sales Strategy", "Process Automation", "BI & Reporting", "Customer Acquisition"]
-  },
-  {
-    title: "Software Engineering Intern",
-    company: "Ubuni Soluciones Ltd.",
-    period: "Sep 2021 – Jan 2022",
-    location: "Dar es Salaam, TZ",
-    description: [
-      "Developed secure REST APIs with Rails for mobile backend.",
-      "Wrote tests and contributed to SCRUM-based product delivery."
-    ],
-    skills: ["API Development", "Ruby on Rails", "Agile Workflow", "Authentication"]
-  }
-];
+    {
+      title: "Senior Software Developer & Technical Lead",
+      company: "ICTPACK Solutions Ltd.",
+      period: "Apr 2024 – Present",
+      location: "Dar es Salaam, TZ",
+      description: [
+        "Building and leading a high-performing engineering team.",
+        "Architected ECTS mobile platform, to migrate from paper based receipts.",
+        "Led cloud migration from GCP, reducing costs by 40%.",
+        "Engineered the ZBS iSQMT platform, supportin 1,000+ monthly importers in Zanzibar."
+      ],
+      skills: ["Technical Leadership", "System Design", "Cloud Architecture", "AI Strategy", "Mobile Platforms"]
+    },
+    {
+      title: "Software Developer & DevOps Advocate",
+      company: "ICTPACK Solutions Ltd.",
+      period: "May 2022 – Apr 2024",
+      location: "Dar es Salaam, TZ",
+      description: [
+        "Delivered full-stack solution for TANAPA, tracking 2,000+ vehicles.",
+        "Built CI/CD pipelines, reducing deploy time from days to hours.",
+        "Migrated to self-hosted GitLab, saving $2,000+ annually.",
+        "Streamlined QA, cutting hours of manual testing per project."
+      ],
+      skills: ["Full-Stack Development", "DevOps", "Automation", "Cost Optimization"]
+    },
+    {
+      title: "Field Sales Officer & Automation Builder",
+      company: "Vodacom Tanzania Plc. via NANINE",
+      period: "Feb 2022 – May 2022",
+      location: "Dar es Salaam, TZ",
+      description: [
+        "Onboarded 60+ SMEs to Vodacom’s Lipa Kwa Simu service.",
+        "Built automation tool for campaign data and performance insights.",
+        "Produced executive reports for SME activations."
+      ],
+      skills: ["Sales Strategy", "Process Automation", "BI & Reporting", "Customer Acquisition"]
+    },
+    {
+      title: "Software Engineering Intern",
+      company: "Ubuni Soluciones Ltd.",
+      period: "Sep 2021 – Jan 2022",
+      location: "Dar es Salaam, TZ",
+      description: [
+        "Developed secure REST APIs with Rails for mobile backend.",
+        "Wrote tests and contributed to SCRUM-based product delivery."
+      ],
+      skills: ["API Development", "Ruby on Rails", "Agile Workflow", "Authentication"]
+    }
+  ];
 
 
 

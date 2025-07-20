@@ -52,16 +52,16 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
             
             {/* Social links */}
             <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in delay-700 mb-8">
-              <a href={communication.github} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Github className="h-6 w-6" />
               </a>
-              <a href={communication.linkedin} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.linkedin} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href={`mailto:${communication.email}`} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={`mailto:${communication.email}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Mail className="h-6 w-6" />
               </a>
-              <a href={`tel:${communication.phone}`} target="blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={`tel:${communication.phone}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Phone className="h-6 w-6" />
               </a>
             </div>
