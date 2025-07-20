@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const isMobile = useIsMobile();
-  const [showFloatingNav, setShowFloatingNav] = useState(!isMobile);
+  const [showFloatingNav, setShowFloatingNav] = useState(isMobile);
 
   return (
     <QueryClientProvider client={queryClient}>
