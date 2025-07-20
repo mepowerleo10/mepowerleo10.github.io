@@ -19,7 +19,7 @@ const Experience = () => {
         "Building and leading a high-performing engineering team.",
         "Architected ECTS mobile platform, to migrate from paper based receipts.",
         "Led cloud migration from GCP, reducing costs by 40%.",
-        "Engineered the ZBS iSQMT platform, supportin 1,000+ monthly importers in Zanzibar."
+        "Engineered the ZBS iSQMT platform, supporting 1,000+ monthly importers in Zanzibar."
       ],
       skills: ["Technical Leadership", "System Design", "Cloud Architecture", "AI Strategy", "Mobile Platforms"]
     },
@@ -31,6 +31,7 @@ const Experience = () => {
       description: [
         "Delivered full-stack solution for TANAPA, tracking 2,000+ vehicles.",
         "Built CI/CD pipelines, reducing deploy time from days to hours.",
+        "Spearheaded the migration to Docker containers for deployments",
         "Migrated to self-hosted GitLab, saving $2,000+ annually.",
         "Streamlined QA, cutting hours of manual testing per project."
       ],
@@ -43,7 +44,7 @@ const Experience = () => {
       location: "Dar es Salaam, TZ",
       description: [
         "Onboarded 60+ SMEs to Vodacom’s Lipa Kwa Simu service.",
-        "Built automation tool for campaign data and performance insights.",
+        "Built an automation tool for campaign data and performance insights.",
         "Produced executive reports for SME activations."
       ],
       skills: ["Sales Strategy", "Process Automation", "BI & Reporting", "Customer Acquisition"]
