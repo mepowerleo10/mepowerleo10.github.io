@@ -61,9 +61,11 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
               <a href={`mailto:${communication.email}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
                 <Mail className="h-6 w-6" />
               </a>
-              <a href={`tel:${communication.phone}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
-                <Phone className="h-6 w-6" />
-              </a>
+              {communication.phone && (
+                <a href={`tel:${communication.phone}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+                  <Phone className="h-6 w-6" />
+                </a>
+              )}
             </div>
             
             {/* Nav links */}

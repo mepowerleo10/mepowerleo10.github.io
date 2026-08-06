@@ -120,6 +120,7 @@ const Contact = () => {
                 </div>
               </div>
               
+              {communication.phone && (
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/20 rounded-lg">
                   <Phone className="h-5 w-5 text-primary" />
@@ -129,6 +130,7 @@ const Contact = () => {
                   <p className="text-muted-foreground"><a href={`tel:${communication.phone}`}>{communication.phone}</a></p>
                 </div>
               </div>
+              )}
               
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/20 rounded-lg">
