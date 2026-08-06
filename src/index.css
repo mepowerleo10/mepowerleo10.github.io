@@ -156,6 +156,11 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
   }

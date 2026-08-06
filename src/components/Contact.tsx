@@ -79,7 +79,7 @@ const Contact = () => {
 
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-6 bg-muted/40 flex items-center justify-center">
+    <section id="contact" className="min-h-screen py-20 px-6 bg-muted/40 flex items-center justify-center snap-start">
       <div
         ref={ref}
         className={cn(

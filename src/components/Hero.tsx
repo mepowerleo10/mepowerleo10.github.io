@@ -15,7 +15,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
   setNavVisible(isNavVisible);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background snap-start">
       {/* Background image at low visibility */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.6] dark:hidden"

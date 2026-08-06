@@ -65,7 +65,7 @@ const Experience = () => {
 
 
   return (
-    <section id="experience" className="min-h-screen py-20 px-6 flex items-center justify-center">
+    <section id="experience" className="min-h-screen py-20 px-6 flex items-center justify-center snap-start">
       <div
         ref={ref}
         className={cn(

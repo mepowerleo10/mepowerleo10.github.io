@@ -13,7 +13,7 @@ const About = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <section id="about" className="min-h-screen py-20 px-6 flex items-center justify-center">
+    <section id="about" className="min-h-screen py-20 px-6 flex items-center justify-center snap-start">
       <div
         ref={ref}
         className={cn(

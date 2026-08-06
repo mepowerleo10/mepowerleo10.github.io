@@ -22,7 +22,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="min-h-screen py-20 px-6 flex items-center justify-center">
+    <section id="skills" className="min-h-screen py-20 px-6 flex items-center justify-center snap-start">
       <div
         ref={ref}
         className={cn(
