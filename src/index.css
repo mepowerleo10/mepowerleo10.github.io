@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'ClashGrotesk';
+  src: url('/fonts/clash-grotesk/ClashGrotesk-Variable.woff2') format('woff2'),
+       url('/fonts/clash-grotesk/ClashGrotesk-Variable.woff') format('woff');
+  font-weight: 200 700;
+  font-display: block;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/fonts/work-sans/WorkSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: block;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/fonts/work-sans/WorkSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: block;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/fonts/work-sans/WorkSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: block;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/fonts/work-sans/WorkSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: block;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url('/fonts/work-sans/WorkSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: block;
+  font-style: normal;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -132,7 +177,11 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
 

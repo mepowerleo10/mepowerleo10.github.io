@@ -40,8 +40,8 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
               <TypewriterEffect
                 words={[
                   { text: "Software Engineer", className: "text-primary" },
-                  { text: "DevOps Engineer", className: "text-primary" },
-                  { text: "AI Integrator", className: "text-primary" },
+                  // { text: "DevOps Engineer", className: "text-primary" },
+                  { text: "Systems Architect", className: "text-primary" },
                 ]}
                 className="text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]"
               />
