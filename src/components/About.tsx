@@ -21,8 +21,8 @@ const About = () => {
           isIntersecting ? "opacity-100" : "opacity-0"
         )}
       >
-        <h2 className="text-4xl font-bold mb-8">
-          <span className="gradient-text">About Me</span>
+        <h2 className="text-4xl font-bold mb-8 tracking-tight">
+          About Me
         </h2>
 
         <div className="prose prose-lg prose-invert max-w-none">
@@ -30,11 +30,11 @@ const About = () => {
 
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I'm a software engineer and DevOps lead with 3+ years of experience building scalable systems, leading teams, and delivering products that drive revenue and serve thousands daily.
+            I'm a software engineer and DevOps lead with 4+ years of experience building scalable systems, leading teams, and delivering products that drive revenue and serve thousands daily.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I specialize in rapid execution—mastering complex tech like Java Netty and ReactJS in weeks to ship mission-critical solutions. From mobile apps to DevOps automation, I build fast, lead boldly, and deliver real impact.
+            I specialize in rapid execution, and mastering complex tech like Java Netty and ReactJS in weeks to ship mission-critical solutions. From mobile apps to DevOps automation, I build fast, lead boldly, and deliver real impact.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -44,7 +44,7 @@ const About = () => {
           <div className="flex flex-wrap gap-3 mt-8">
             <Dialog onOpenChange={(open) => !open && setIsLoading(true)}>
               <DialogTrigger asChild>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect transition-all duration-300 hover:scale-105">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105">
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </Button>

@@ -73,8 +73,8 @@ const Experience = () => {
           isIntersecting ? "opacity-100" : "opacity-0"
         )}
       >
-        <h2 className="text-4xl font-bold mb-8 text-center">
-          <span className="gradient-text">Experience</span>
+        <h2 className="text-4xl font-bold mb-8 text-center tracking-tight">
+          Experience
         </h2>
         <div className="space-y-12">
           {experience.map((exp, index) => (
@@ -111,7 +111,7 @@ const Experience = () => {
                       <Badge
                         key={skillIndex}
                         variant="secondary"
-                        className="bg-secondary/50 text-secondary-foreground text-xs"
+                        className="bg-primary/10 text-primary border-primary/20 text-xs"
                       >
                         {skill}
                       </Badge>

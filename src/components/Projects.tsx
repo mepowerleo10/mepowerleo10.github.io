@@ -60,7 +60,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen py-20 px-6 bg-secondary/20 flex items-center justify-center">
+    <section id="projects" className="min-h-screen py-20 px-6 bg-muted/40 flex items-center justify-center">
       <div
         ref={ref}
         className={cn(
@@ -69,8 +69,8 @@ const Projects = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">Projects</span>
+          <h2 className="text-4xl font-bold mb-4 tracking-tight">
+            Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A showcase of projects I've architected, led, or contributed to.
@@ -85,7 +85,8 @@ const Projects = () => {
             return (
               <Card
                 key={index}
-                className="bg-gradient-card border-border/50 hover-scale transition-all duration-300 hover:shadow-glow"
+                className="bg-card border border-border hover-scale transition-all duration-300"
+                style={{ boxShadow: '0 4px 20px hsl(151 42% 15% / 0.04)' }}
               >
                 <CardHeader className="relative">
                   <div className="flex items-start justify-between">

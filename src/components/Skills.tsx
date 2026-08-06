@@ -12,13 +12,13 @@ const Skills = () => {
   const devSkills = [
     { category: "Frontend", skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTMX"], icon: Code },
     { category: "Backend", skills: ["Java", "Node.js", "Python", "PHP", "PostgreSQL", "MongoDB", "Neo4J"], icon: Database },
-    { category: "Mobile", skills: ["Java", "Flutter", "Swift", "Kotlin"], icon: Zap }
+    { category: "Mobile", skills: ["Java", "Flutter", "Kotlin"], icon: Zap }
   ];
 
   const devopsSkills = [
     { category: "Cloud", skills: ["AWS", "Google Cloud", "Azure", "DigitalOcean"], icon: Cloud },
     { category: "DevOps", skills: ["Docker", "Kubernetes", "Jenkins", "GitLab CI", "Ansible"], icon: Server },
-    { category: "Monitoring", skills: ["Prometheus", "Grafana", "ELK Stack", "DataDog"], icon: Terminal }
+    { category: "Monitoring", skills: ["Prometheus", "Grafana", "ELK Stack", "OpenObserve"], icon: Terminal }
   ];
 
   return (
@@ -31,8 +31,8 @@ const Skills = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">Skills & Expertise</span>
+          <h2 className="text-4xl font-bold mb-4 tracking-tight">
+            Skills &amp; Expertise
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Full-stack development meets modern DevOps practices
@@ -50,7 +50,8 @@ const Skills = () => {
             </div>
             
             {devSkills.map((skillGroup, index) => (
-              <Card key={index} className="bg-gradient-card border-border/50 hover-scale transition-all duration-300 hover:shadow-glow">
+              <Card key={index} className="bg-card border border-border hover-scale transition-all duration-300"
+                style={{ boxShadow: '0 4px 20px hsl(151 42% 15% / 0.04)' }}>
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-3 text-lg">
                     <skillGroup.icon className="h-5 w-5 text-primary" />
@@ -84,7 +85,8 @@ const Skills = () => {
             </div>
             
             {devopsSkills.map((skillGroup, index) => (
-              <Card key={index} className="bg-gradient-card border-border/50 hover-scale transition-all duration-300 hover:shadow-glow">
+              <Card key={index} className="bg-card border border-border hover-scale transition-all duration-300"
+                style={{ boxShadow: '0 4px 20px hsl(151 42% 15% / 0.04)' }}>
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-3 text-lg">
                     <skillGroup.icon className="h-5 w-5 text-accent" />

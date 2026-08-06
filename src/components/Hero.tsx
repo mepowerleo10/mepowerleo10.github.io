@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import heroImage from "@/assets/me.jpg";
+import bgImageLight from "@/assets/background-light.png";
+import bgImageDark from "@/assets/background-dark.png";
 import { Link } from "react-scroll";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { communication } from "@/lib/settings";
@@ -13,63 +15,70 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
   setNavVisible(isNavVisible);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden tech-grid">
-      {/* Background with hero image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${heroImage})` }}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Background image at low visibility */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.6] dark:hidden"
+        style={{ backgroundImage: `url(${bgImageLight})` }}
       />
-      
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-hero" />
-      
-      {/* Floating elements */}
-      <div className="absolute top-20 left-20 w-2 h-2 bg-primary rounded-full animate-pulse-glow" />
-      <div className="absolute top-40 right-32 w-1 h-1 bg-tech-cyan rounded-full animate-float" />
-      <div className="absolute bottom-32 left-16 w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-      
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.4] hidden dark:block"
+        style={{ backgroundImage: `url(${bgImageDark})` }}
+      />
+      {/* Warm overlay to preserve palette tone */}
+      <div className="absolute inset-0 bg-background/60" />
+
+      {/* Floating organic accent dots — each follows a unique drifting path */}
+      <div className="absolute top-20 left-20 w-3 h-3 bg-primary/25 rounded-full animate-drift-a" />
+      <div className="absolute top-40 right-32 w-1.5 h-1.5 bg-secondary/35 rounded-full animate-drift-b" style={{ animationDelay: '-4s' }} />
+      <div className="absolute bottom-32 left-16 w-2 h-2 bg-primary/20 rounded-full animate-drift-c" style={{ animationDelay: '-8s' }} />
+      <div className="absolute top-1/3 right-16 w-1 h-1 bg-secondary/30 rounded-full animate-drift-d" style={{ animationDelay: '-2s' }} />
+      <div className="absolute bottom-1/4 right-40 w-2.5 h-2.5 bg-primary/15 rounded-full animate-drift-e" style={{ animationDelay: '-11s' }} />
+      <div className="absolute top-2/3 left-1/3 w-1.5 h-1.5 bg-secondary/25 rounded-full animate-drift-b" style={{ animationDelay: '-6s' }} />
+      <div className="absolute top-1/4 left-1/2 w-1 h-1 bg-primary/30 rounded-full animate-drift-c" style={{ animationDelay: '-14s' }} />
+
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text content */}
           <div className="text-center lg:text-left">
             <div className="mb-8">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-                <span className="gradient-text">Mussa Mipawa Shomari</span>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight animate-fade-in">
+                <span className="text-foreground">Mussa Mipawa Shomari</span>
               </h1>
               <TypewriterEffect
                 words={[
-                  { text: "Software Engineer", className: "text-primary" },
-                  // { text: "DevOps Engineer", className: "text-primary" },
-                  { text: "Systems Architect", className: "text-primary" },
+                  { text: "Software Engineer", className: "text-secondary" },
+                  { text: "Systems Architect", className: "text-secondary" },
+                  { text: "Dreamer", className: "text-secondary" },
                 ]}
                 className="text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]"
               />
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-300">
-                Solving real-world problems through code, automation, and intelligence.
+                Building my world through code, automation, and intelligence.
               </p>
             </div>
             
             {/* Social links */}
             <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in delay-700 mb-8">
-              <a href={communication.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                 <Github className="h-6 w-6" />
               </a>
-              <a href={communication.linkedin} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={communication.linkedin} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href={`mailto:${communication.email}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+              <a href={`mailto:${communication.email}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                 <Mail className="h-6 w-6" />
               </a>
               {communication.phone && (
-                <a href={`tel:${communication.phone}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">
+                <a href={`tel:${communication.phone}`} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                   <Phone className="h-6 w-6" />
                 </a>
               )}
             </div>
             
             {/* Nav links */}
-            <div ref={navRef} className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 animate-fade-in delay-600 text-lg">
+            <div ref={navRef} className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 animate-fade-in delay-600 text-lg font-heading uppercase tracking-widest text-sm">
               <Link to="about" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">About</Link>
               <Link to="experience" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Experience</Link>
               <Link to="projects" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Projects</Link>
@@ -81,13 +90,12 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
           {/* Hero image */}
           <div className="hidden lg:flex justify-center lg:justify-end animate-fade-in delay-500">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse-glow"></div>
               <img 
                 src={heroImage} 
                 alt="Mussa Mipawa Shomari" 
-                className="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-primary/30 shadow-glow hover-scale"
+                className="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-sm shadow-card hover-scale"
+                style={{ boxShadow: '0 12px 40px hsl(151 42% 15% / 0.08)' }}
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-background/20 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -95,8 +103,8 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
       
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-primary/40 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-primary/60 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

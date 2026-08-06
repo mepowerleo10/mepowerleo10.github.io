@@ -53,121 +53,105 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light theme */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Terra & Timber — light theme */
+    --background: 22 100% 98%;       /* #fff8f4 soft cream */
+    --foreground: 30 10% 11%;        /* #1f1b17 dark bark */
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 30 10% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 30 10% 11%;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 151 42% 15%;          /* #163526 forest green */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 17 74% 36%;         /* #a23e18 burnt orange */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 28 22% 92%;             /* warm light surface */
+    --muted-foreground: 150 5% 40%;  /* bark gray */
 
-    --accent: 142 76% 30%; /* Darker green for better contrast in light mode */
-    --accent-foreground: 0 0% 100%; /* White text for better contrast */
+    --accent: 17 74% 36%;            /* burnt orange CTA */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 41%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 28 22% 87%;            /* #eae1da */
+    --input: 28 22% 87%;
+    --ring: 151 42% 15%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;               /* 4px — soft, not bubbly */
 
-    /* Custom portfolio colors (adjusted for light mode) */
-    --tech-blue: 200 98% 30%; /* Darker blue for contrast */
-    --tech-cyan: 180 100% 25%; /* Darker cyan for contrast */
-    --devops-green: 142 76% 20%; /* Darker green for contrast */
-    --code-purple: 260 100% 40%; /* Darker purple for contrast */
-    
-    /* Gradients (adjusted for light mode) */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--tech-cyan)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(240 4.8% 90%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(240 4.8% 98%) 100%);
-    
-    /* Shadows (adjusted for light mode) */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.1);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.1);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(151 25% 24%));
+    --gradient-hero: hsl(var(--background));
+    --gradient-card: hsl(var(--card));
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Shadows — Forest Green tinted per design spec */
+    --shadow-glow: 0 4px 20px hsl(151 42% 15% / 0.08);
+    --shadow-card: 0 4px 20px hsl(151 42% 15% / 0.04);
+
+    --sidebar-background: 28 22% 97%;
+    --sidebar-foreground: 30 10% 11%;
+    --sidebar-primary: 151 42% 15%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 28 22% 92%;
+    --sidebar-accent-foreground: 30 10% 11%;
+    --sidebar-border: 28 22% 87%;
+    --sidebar-ring: 151 42% 15%;
   }
 
   .dark {
-    /* Dark tech-inspired theme */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Forest — inverse Terra & Timber */
+    --background: 30 14% 17%;        /* #34302b warm dark brown */
+    --foreground: 22 71% 96%;        /* #f8efe8 warm cream */
 
-    --card: 222 84% 6%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 12% 20%;
+    --card-foreground: 22 71% 96%;
 
-    --popover: 222 84% 6%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 12% 20%;
+    --popover-foreground: 22 71% 96%;
 
-    --primary: 200 98% 60%;
-    --primary-foreground: 222 84% 4.9%;
+    --primary: 138 22% 74%;          /* #accfb8 muted sage green */
+    --primary-foreground: 151 42% 15%;
 
-    --secondary: 217 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 17 98% 67%;         /* #fe8357 warm coral */
+    --secondary-foreground: 30 50% 15%;
 
-    --muted: 217 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 10% 24%;
+    --muted-foreground: 28 12% 65%;
 
-    --accent: 142 76% 36%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 17 98% 67%;
+    --accent-foreground: 30 50% 15%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 22 71% 96%;
 
-    --border: 217 32.6% 17.5%;
-    --input: 217 32.6% 17.5%;
-    --ring: 200 98% 60%;
+    --border: 30 10% 26%;
+    --input: 30 10% 26%;
+    --ring: 138 22% 74%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    /* Custom portfolio colors */
-    --tech-blue: 200 98% 60%;
-    --tech-cyan: 180 100% 50%;
-    --devops-green: 142 76% 36%;
-    --code-purple: 260 100% 80%;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--tech-cyan)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(217 32.6% 12%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(217 32.6% 8%) 100%);
-    
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
-    
-    /* Animation timings */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(138 22% 60%));
+    --gradient-hero: hsl(var(--background));
+    --gradient-card: hsl(var(--card));
+
+    --shadow-glow: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.25);
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 30 12% 14%;
+    --sidebar-foreground: 22 71% 96%;
+    --sidebar-primary: 138 22% 74%;
+    --sidebar-primary-foreground: 151 42% 15%;
+    --sidebar-accent: 30 10% 22%;
+    --sidebar-accent-foreground: 22 71% 96%;
+    --sidebar-border: 30 10% 22%;
+    --sidebar-ring: 138 22% 74%;
   }
 }
 
@@ -186,60 +170,80 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Hero gradient text effect */
+  /* Heading gradient — forest green */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-[hsl(var(--tech-cyan))] bg-clip-text text-transparent;
-  }
-  
-  /* Glowing effect for cards and elements */
-  .glow-effect {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  /* Animated gradient background */
-  .gradient-animated {
-    background: var(--gradient-hero);
-    background-size: 400% 400%;
-    animation: gradientShift 8s ease infinite;
-  }
-  
-  /* Hover scale animation */
-  .hover-scale {
-    transition: var(--transition-smooth);
-  }
-  
-  .hover-scale:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Active navigation link style */
-  .active-nav-link {
-    @apply bg-primary text-primary-foreground transition-colors duration-500 !important;
+    @apply bg-gradient-to-r from-primary to-[hsl(151_25%_30%)] bg-clip-text text-transparent;
   }
 
-  /* Tech grid pattern */
-  .tech-grid {
-    background-image: 
-      linear-gradient(rgba(200, 220, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200, 220, 255, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
+  /* Subtle elevation shadow */
+  .glow-effect {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Hover scale animation */
+  .hover-scale {
+    transition: var(--transition-smooth, all 0.3s cubic-bezier(0.4, 0, 0.2, 1));
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* Active navigation link */
+  .active-nav-link {
+    @apply bg-primary text-primary-foreground transition-colors duration-500 !important;
   }
 }
 
 @layer utilities {
-  /* Animation keyframes */
-  @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
   }
-  
+
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+    0%, 100% { box-shadow: var(--shadow-card); }
+    50% { box-shadow: 0 8px 40px hsl(151 42% 15% / 0.12); }
   }
+
+  /* Organic drifting paths for hero background dots */
+  @keyframes drift-a {
+    0%   { transform: translate(0px, 0px); }
+    25%  { transform: translate(40px, -30px); }
+    50%  { transform: translate(80px, 10px); }
+    75%  { transform: translate(30px, 50px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  @keyframes drift-b {
+    0%   { transform: translate(0px, 0px); }
+    25%  { transform: translate(-50px, 20px); }
+    50%  { transform: translate(-20px, 60px); }
+    75%  { transform: translate(30px, 30px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  @keyframes drift-c {
+    0%   { transform: translate(0px, 0px); }
+    33%  { transform: translate(60px, -50px); }
+    66%  { transform: translate(-40px, -30px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  @keyframes drift-d {
+    0%   { transform: translate(0px, 0px); }
+    20%  { transform: translate(-30px, -40px); }
+    50%  { transform: translate(-70px, 10px); }
+    80%  { transform: translate(-20px, 50px); }
+    100% { transform: translate(0px, 0px); }
+  }
+  @keyframes drift-e {
+    0%   { transform: translate(0px, 0px); }
+    30%  { transform: translate(50px, 40px); }
+    60%  { transform: translate(20px, -20px); }
+    100% { transform: translate(0px, 0px); }
+  }
+
+  .animate-drift-a { animation: drift-a 18s ease-in-out infinite; }
+  .animate-drift-b { animation: drift-b 22s ease-in-out infinite; }
+  .animate-drift-c { animation: drift-c 15s ease-in-out infinite; }
+  .animate-drift-d { animation: drift-d 26s ease-in-out infinite; }
+  .animate-drift-e { animation: drift-e 20s ease-in-out infinite; }
 }

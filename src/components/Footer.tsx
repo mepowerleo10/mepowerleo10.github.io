@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold gradient-text">Mussa Mipawa Shomari</h3>
+            <h3 className="text-xl font-bold text-foreground">Mussa Mipawa Shomari</h3>
             <p className="text-muted-foreground">
-              An engineer passionate about building scalable solutions.
+              <code>mepowerleo10</code> <span className="italic">// Hacked with love</span>. All rights reserved.
             </p>
             <div className="flex space-x-4">
               <a href={communication.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover-scale">

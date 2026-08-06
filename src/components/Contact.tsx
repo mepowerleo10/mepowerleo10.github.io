@@ -79,7 +79,7 @@ const Contact = () => {
 
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-6 bg-secondary/20 flex items-center justify-center">
+    <section id="contact" className="min-h-screen py-20 px-6 bg-muted/40 flex items-center justify-center">
       <div
         ref={ref}
         className={cn(
@@ -88,11 +88,11 @@ const Contact = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">Get In Touch</span>
+          <h2 className="text-4xl font-bold mb-4 tracking-tight">
+            Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can build something amazing together.
+            Let's build something amazing together.
           </p>
         </div>
         
@@ -102,10 +102,9 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                I'm always interested in hearing about new opportunities, 
-                interesting projects, and potential collaborations. Whether you're 
-                looking for a developer, DevOps engineer, or technical consultant, 
-                I'd love to hear from you.
+                I love collaborating with people who are passionate about what they’re building.
+                If you’re working on something interesting, need technical guidance, 
+                or want to explore working together, feel free to reach out, I’d love to connect.
               </p>
             </div>
             
@@ -143,17 +142,17 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="p-6 bg-gradient-card rounded-lg border border-border/50">
+            <div className="p-6 bg-muted/60 rounded-sm border border-border">
               <h4 className="font-semibold mb-2 text-primary">Quick Response Time</h4>
               <p className="text-sm text-muted-foreground">
-                I typically respond to emails within 24 hours. For urgent matters, 
-                feel free to call or send a message on LinkedIn.
+                Expect a reply within 24 hours. For time-sensitive ideas,
+                throw "[Priority]" in the subject line
               </p>
             </div>
           </div>
           
           {/* Contact form */}
-          <Card className="bg-gradient-card border-border/50">
+          <Card className="bg-card border border-border" style={{ boxShadow: '0 4px 20px hsl(151 42% 15% / 0.06)' }}>
             <CardHeader>
               <CardTitle className="text-2xl">Send a Message</CardTitle>
             </CardHeader>

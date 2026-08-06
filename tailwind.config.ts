@@ -67,10 +67,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'tech-blue': 'hsl(var(--tech-blue))',
-				'tech-cyan': 'hsl(var(--tech-cyan))',
-				'devops-green': 'hsl(var(--devops-green))',
-				'code-purple': 'hsl(var(--code-purple))'
+
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
@@ -103,17 +100,13 @@ export default {
 						height: '0'
 					}
 				},
-				gradientShift: {
-					'0%, 100%': { backgroundPosition: '0% 50%' },
-					'50%': { backgroundPosition: '100% 50%' }
-				},
 				float: {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' }
 				},
 				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.3)' },
-					'50%': { boxShadow: '0 0 40px hsl(var(--primary) / 0.6)' }
+					'0%, 100%': { boxShadow: 'var(--shadow-card)' },
+					'50%': { boxShadow: '0 8px 40px hsl(151 42% 15% / 0.12)' }
 				},
 				fadeIn: {
 					'0%': { opacity: '0', transform: 'translateY(10px)' },
