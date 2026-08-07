@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mussa Mipawa Shomari</title>
-    <meta name="description" content="Software Engineer, Developer, Devops Engineer, AI Developer" />
+    <meta name="description" content="Systems Architect, Solutions Architect, Software Engineer, Developer, Devops Engineer, AI Developer" />
     <meta name="author" content="Mussa Mipawa Shomari" />
 
     <meta property="og:title" content="Mussa Mipawa Shomari" />
-    <meta property="og:description" content="Software Engineer, Developer, Devops Engineer, AI Developer" />
+    <meta property="og:description" content="Systems Architect, Solutions Architect, Software Engineer, Developer, Devops Engineer, AI Developer" />
     <meta property="og:type" content="website" />
+
+    <link rel="icon" id="favicon" href="/favicon.ico" type="image/x-icon" />
 
     <link rel="preload" href="/fonts/clash-grotesk/ClashGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/work-sans/WorkSans-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
@@ -19,5 +21,39 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function () {
+        const namecons = [
+          '/namecons/m_5.ico',
+          '/namecons/i_2.ico',
+          '/namecons/p_1.ico',
+          '/namecons/a_4.ico',
+          '/namecons/w_0.ico',
+          '/namecons/a_8.ico',
+        ];
+        const originalFavicon = '/favicon.ico';
+        const nameconMs = 2000;
+        const originalMs = 30000;
+        let index = 0;
+
+        function setFavicon(href) {
+          const link = document.getElementById('favicon');
+          link.href = href;
+        }
+
+        function cycle() {
+          if (index < namecons.length) {
+            setFavicon(namecons[index++]);
+            setTimeout(cycle, nameconMs);
+          } else {
+            index = 0;
+            setFavicon(originalFavicon);
+            setTimeout(cycle, originalMs);
+          }
+        }
+
+        setTimeout(cycle, originalMs);
+      })();
+    </script>
   </body>
 </html>
