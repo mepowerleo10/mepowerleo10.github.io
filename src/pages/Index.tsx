@@ -16,9 +16,9 @@ const Index = () => {
       <FloatingNav isNavVisible={isNavVisible} />
       <Hero setNavVisible={setNavVisible} />
       <About />
-      <Experience />
+      {/* <Experience /> */}
       <Projects />
-      <Skills />
+      {/* <Skills /> */}
       <Contact />
       <Footer />
     </div>

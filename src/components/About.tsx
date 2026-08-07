@@ -27,21 +27,19 @@ const About = () => {
 
         <div className="prose prose-lg prose-invert max-w-none">
 
-
-
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I'm a software engineer and DevOps lead with 4+ years of experience building scalable systems, leading teams, and delivering products that drive revenue and serve thousands daily.
+            I'm Mussa, I design and build software products and the machinery that ships it — Full-stack work, Platform Engineering, CI/CD pipelines, automated versioning, container infrastructure.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I specialize in rapid execution, and mastering complex tech like Java Netty and ReactJS in weeks to ship mission-critical solutions. From mobile apps to DevOps automation, I build fast, lead boldly, and deliver real impact.
+            Lately that's stretched into open-source intelligence work too — building crawlers and AI agents that turn scattered data into usable reports, alongside the platform engineering I do day to day.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I don't just build software—I engineer outcomes.
+            I work mostly in GitHub Actions, GitLab CI, and Docker Swarm, usually alongside DevSecOps engineers and architects making sure things stay reliable as they scale.
           </p>
 
-          <div className="flex flex-wrap gap-3 mt-8">
+          <div className="flex flex-wrap gap-3 mt-8 hidden">
             <Dialog onOpenChange={(open) => !open && setIsLoading(true)}>
               <DialogTrigger asChild>
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105">

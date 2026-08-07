@@ -1,6 +1,6 @@
 
 import { Link } from 'react-scroll';
-import { Home, User, Code, Briefcase, Mail, Presentation, Sun, Moon, Menu, X } from 'lucide-react';
+import { Home, User, Code, Briefcase, Mail, Presentation, Sun, Moon, Menu, X, LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from "./ui/button";
 import { useTheme } from "@/context/theme-provider";
@@ -15,6 +15,15 @@ interface FloatingNavProps {
 const FloatingNav = ({ isNavVisible, showFloatingNav, setShowFloatingNav }: FloatingNavProps) => {
   const { theme, setTheme } = useTheme();
   const isMobile = useIsMobile();
+
+  const navItems: { to: string; icon: LucideIcon; label: string }[] = [
+    { to: 'hero',       icon: Home,         label: 'Home' },
+    { to: 'about',      icon: User,         label: 'About' },
+    // { to: 'experience', icon: Briefcase,    label: 'Experience' },
+    { to: 'projects',   icon: Presentation, label: 'Projects' },
+    // { to: 'skills',     icon: Code,         label: 'Skills' },
+    { to: 'contact',    icon: Mail,         label: 'Contact' },
+  ];
 
   return (
     <>
@@ -57,24 +66,12 @@ const FloatingNav = ({ isNavVisible, showFloatingNav, setShowFloatingNav }: Floa
         )}
       >
         <div className="flex flex-col items-center space-y-4">
-          <Link to="hero" smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-2 sm:p-3 bg-background/90 backdrop-blur-sm rounded-sm border border-border shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
-            <Home className="h-5 w-5 sm:h-6 sm:w-6" />
-          </Link>
-          <Link to="about" smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-2 sm:p-3 bg-background/90 backdrop-blur-sm rounded-sm border border-border shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
-            <User className="h-5 w-5 sm:h-6 sm:w-6" />
-          </Link>
-          <Link to="experience" smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-2 sm:p-3 bg-background/90 backdrop-blur-sm rounded-sm border border-border shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
-            <Briefcase className="h-5 w-5 sm:h-6 sm:w-6" />
-          </Link>
-          <Link to="projects" smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-2 sm:p-3 bg-background/90 backdrop-blur-sm rounded-sm border border-border shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
-            <Presentation className="h-5 w-5 sm:h-6 sm:w-6" />
-          </Link>
-          <Link to="skills" smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-2 sm:p-3 bg-background/90 backdrop-blur-sm rounded-sm border border-border shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
-            <Code className="h-5 w-5 sm:h-6 sm:w-6" />
-          </Link>
-          <Link to="contact" smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-2 sm:p-3 bg-background/90 backdrop-blur-sm rounded-sm border border-border shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
-            <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
-          </Link>
+          {navItems.map(({ to, icon: Icon, label }) => (
+            <Link key={to} to={to} smooth={true} duration={500} spy={true} activeClass="active-nav-link" className="p-2 sm:p-3 bg-background/90 backdrop-blur-sm rounded-sm border border-border shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer">
+              <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="sr-only">{label}</span>
+            </Link>
+          ))}
         </div>
       </div>
     </>

@@ -80,9 +80,9 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
             {/* Nav links */}
             <div ref={navRef} className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 animate-fade-in delay-600 text-lg font-heading uppercase tracking-widest text-sm">
               <Link to="about" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">About</Link>
-              <Link to="experience" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Experience</Link>
+              {/* <Link to="experience" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Experience</Link> */}
               <Link to="projects" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Projects</Link>
-              <Link to="skills" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Skills</Link>
+              {/* <Link to="skills" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Skills</Link> */}
               <Link to="contact" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Contact</Link>
             </div>
           </div>
