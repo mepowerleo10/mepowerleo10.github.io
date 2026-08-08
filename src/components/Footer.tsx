@@ -14,6 +14,9 @@ const Footer = () => {
             <p className="text-muted-foreground">
               <code>mepowerleo10</code> <span className="italic">// Hacked with love</span>
             </p>
+            <p className="text-muted-foreground">
+              The header background image was created using NASA's <a href="https://science.nasa.gov/specials/your-name-in-landsat/" target="_blank" className="text-primary hover:underline">Your Name in Landsat</a>
+            </p>
           </div>
           
           

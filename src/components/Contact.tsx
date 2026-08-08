@@ -72,7 +72,7 @@ const Contact = () => {
         )}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 tracking-tight">
+          <h2 id="morph-title-contact" className="text-4xl font-bold mb-4 tracking-tight">
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

@@ -45,13 +45,14 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
           <div className="text-center lg:text-left">
             <div className="mb-8">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight animate-fade-in">
-                <span className="text-foreground">Mussa Mipawa Shomari</span>
+                <span id="morph-title-hero" className="text-foreground">Mussa Mipawa Shomari</span>
               </h1>
               <TypewriterEffect
                 words={[
-                  { text: "Software Engineer", className: "text-secondary" },
-                  { text: "Systems Architect", className: "text-secondary" },
+                  { text: "Engineer", className: "text-secondary" },
+                  { text: "Architect", className: "text-secondary" },
                   { text: "Dreamer", className: "text-secondary" },
+                  { text: "Harbinger of Chaos", className: "text-secondary" },
                 ]}
                 className="text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]"
               />
@@ -82,7 +83,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
             <div ref={navRef} className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 animate-fade-in delay-600 text-lg font-heading uppercase tracking-widest text-sm">
               <Link to="about" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">About</Link>
               {/* <Link to="experience" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Experience</Link> */}
-              <Link to="projects" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Projects</Link>
+              <Link to="projects" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Work</Link>
               {/* <Link to="skills" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Skills</Link> */}
               <Link to="contact" smooth={true} duration={500} className="text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer">Contact</Link>
             </div>

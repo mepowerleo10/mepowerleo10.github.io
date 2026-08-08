@@ -21,7 +21,7 @@ const About = () => {
           isIntersecting ? "opacity-100" : "opacity-0"
         )}
       >
-        <h2 className="text-4xl font-bold mb-8 tracking-tight">
+        <h2 id="morph-title-about" className="text-4xl font-bold mb-8 tracking-tight">
           About Me
         </h2>
 

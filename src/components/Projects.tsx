@@ -88,7 +88,7 @@ const Projects = () => {
 
         {/* Left: heading + project list with fill indicator */}
         <div className="shrink-0 w-full md:w-64 md:sticky md:top-20">
-          <h2 className="text-4xl font-bold mb-8 tracking-tight">Projects</h2>
+          <h2 id="morph-title-projects" className="text-4xl font-bold mb-8 tracking-tight">Featured Work</h2>
 
           <div className="flex gap-3">
             {/* Track + animated fill bar */}
