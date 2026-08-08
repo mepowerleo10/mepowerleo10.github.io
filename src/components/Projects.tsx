@@ -15,28 +15,28 @@ const Projects = () => {
       title: "ICTC Website and CMS",
       description: "A modern, responsive Laravel-powered website for the ICT Commission of Tanzania. Features dynamic content management, media handling, and seamless government service integration.",
       type: "development",
-      tech: ["Laravel", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
+      tags: ["Laravel", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
       demo: "https://ictc.go.tz/"
     },
     {
       title: "ICTC Event Management System (EMS)",
       description: "A robust web platform for organizing, publishing, and managing ICT-related events and registrations across Tanzania. Includes dynamic content management, participant tracking, and admin workflows.",
       type: "development",
-      tech: ["Laravel", "Livewire", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
+      tags: ["Laravel", "Livewire", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
       demo: "https://ems.ictc.go.tz/event"
     },
     {
       title: "ZBS Quality Management System",
       description: "Enterprise-grade platform for managing product testing, importer registration, and compliance workflows for the Zanzibar Bureau of Standards. Integrates seamlessly with government systems via custom Express.js middlewares.",
       type: "development",
-      tech: ["Yii2", "PHP", "Express.js", "JavaScript", "Tailwind CSS", "MySQL"],
+      tags: ["Yii2", "PHP", "Express.js", "JavaScript", "Tailwind CSS", "MySQL"],
       demo: "https://viwango.zbs.go.tz/"
     },
     {
       title: "DocoLoco",
       description: "GTK4 desktop app for browsing Dash docs & Linux man pages, packaged as Flatpak.",
       type: "development",
-      tech: ["Linux", "Flatpak", "GTK4", "Python"],
+      tags: ["Linux", "Flatpak", "GTK4", "Python"],
       demo: "https://github.com/mepowerleo10/DocoLoco"
     },
   ];
@@ -107,7 +107,7 @@ const Projects = () => {
 
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
+                    {project.tags.map((tech, techIndex) => (
                       <Badge
                         key={techIndex}
                         variant="secondary"

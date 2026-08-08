@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import heroImage from "@/assets/me.jpg";
+import heroTopLayer from "@/assets/me-top-layer.jpg";
+import heroBottomLayer from "@/assets/me-bottom-layer.jpg";
 import bgImageLight from "@/assets/background-light.png";
 import bgImageDark from "@/assets/background-dark.png";
 import { Link } from "react-scroll";
@@ -89,11 +90,17 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
           
           {/* Hero image */}
           <div className="hidden lg:flex justify-center lg:justify-end animate-fade-in delay-500">
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="Mussa Mipawa Shomari" 
-                className="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-sm shadow-card hover-scale"
+            <div className="relative w-80 h-80 md:w-96 md:h-96 group">
+              <img
+                src={heroBottomLayer}
+                alt="Mussa Mipawa Shomari"
+                className="absolute inset-0 w-full h-full object-cover rounded-sm shadow-card"
+                style={{ boxShadow: '0 12px 40px hsl(151 42% 15% / 0.08)' }}
+              />
+              <img
+                src={heroTopLayer}
+                alt="Mussa Mipawa Shomari"
+                className="absolute inset-0 w-full h-full object-cover rounded-sm shadow-card transition-opacity duration-500 group-hover:opacity-0"
                 style={{ boxShadow: '0 12px 40px hsl(151 42% 15% / 0.08)' }}
               />
             </div>
