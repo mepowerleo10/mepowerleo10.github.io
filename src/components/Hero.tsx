@@ -57,7 +57,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
                 className="text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]"
               />
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-300">
-                Building my world through code, automation, and intelligence.
+                Making sure solutions do not wake you up at 3AM
               </p>
             </div>
             

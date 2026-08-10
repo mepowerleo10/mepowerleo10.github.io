@@ -28,15 +28,15 @@ const About = () => {
         <div className="prose prose-lg prose-invert max-w-none">
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I'm Mussa, I design and build software products and the machinery that ships it — Full-stack work, Platform Engineering, CI/CD pipelines, automated versioning, container infrastructure.
+            I'm Mussa — I design and build software products and the systems that ship them reliably. Full-stack work paired with platform engineering: CI/CD pipelines, automated versioning, container infrastructure.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Lately that's stretched into open-source intelligence work too — building crawlers and AI agents that turn scattered data into usable reports, alongside the platform engineering I do day to day.
+            I've also stretched into open-source intelligence — building crawlers and AI agents that turn scattered data into actionable reports.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            I work mostly in GitHub Actions, GitLab CI, and Docker Swarm, usually alongside DevSecOps engineers and architects making sure things stay reliable as they scale.
+            I build systems that work, love hard problems, and like teams that move fast.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8 hidden">

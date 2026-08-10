@@ -1,7 +1,7 @@
 export const communication = {
     github: "https://github.com/mepowerleo10",
     linkedin: "https://www.linkedin.com/in/mussashomari/",
-    email: "mussa.shomari10@gmail.com",
+    email: "hi@mussamipawa.com",
     phone: null, // "+255 754 123 456",
     address: "Dar es Salaam, Tanzania",
 }

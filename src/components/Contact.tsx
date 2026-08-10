@@ -1,21 +1,14 @@
-import { useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { useRef } from "react";
 import {
   Mail,
-  Phone,
   MapPin,
-  Send,
-  Loader2,
   LucideIcon,
   Github,
   Linkedin,
 } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { cn } from "@/lib/utils";
-import { communication, formSpree } from "@/lib/settings";
+import { communication } from "@/lib/settings";
 
 
 const Contact = () => {
@@ -76,7 +69,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Happy to hear from you! Email is fastest.
+            Found a problem you need solved? Email me
           </p>
         </div>
 
