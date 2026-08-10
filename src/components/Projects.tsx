@@ -14,7 +14,7 @@ const Projects = () => {
       title: "ICTC Website and CMS",
       description: "A modern, responsive Laravel-powered website for the ICT Commission of Tanzania. Features dynamic content management, media handling, and seamless government service integration.",
       type: "development",
-      tags: ["Design", "Architectural Consultation", "Laravel"],
+      tags: ["Design", "Content Management"],
       demo: "https://ictc.go.tz/",
       image: "images/ictc-website.webp",
       animationImage: "images/ictc-website-anim.webp",
@@ -23,28 +23,19 @@ const Projects = () => {
       title: "ICTC Event Management System (EMS)",
       description: "A robust web platform for organizing, publishing, and managing ICT-related events and registrations across Tanzania. Includes dynamic content management, participant tracking, and admin workflows.",
       type: "development",
-      tags: ["Laravel", "Livewire", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
+      tags: ["Design", "Development", "Architectural Consultation"],
       demo: "https://ems.ictc.go.tz/event",
       image: "images/ictc-ems.png",
       animationImage: undefined as string | undefined,
     },
     {
-      title: "ZBS Quality Management System",
-      description: "Enterprise-grade platform for managing product testing, importer registration, and compliance workflows for the Zanzibar Bureau of Standards. Integrates seamlessly with government systems via custom Express.js middlewares.",
-      type: "development",
-      tags: ["Yii2", "PHP", "Express.js", "JavaScript", "Tailwind CSS", "MySQL"],
-      demo: "https://viwango.zbs.go.tz/",
-      image: undefined as string | undefined,
-      animationImage: undefined as string | undefined,
-    },
-    {
       title: "DocoLoco",
-      description: "GTK4 desktop app for browsing Dash docs & Linux man pages, packaged as Flatpak.",
+      description: "An open-source GTK4 desktop app for browsing Dash docs & Linux man pages, packaged as Flatpak.",
       type: "development",
-      tags: ["Linux", "Flatpak", "GTK4", "Python"],
+      tags: ["Open-Source", "Community Driven", "GTK4"],
       demo: "https://github.com/mepowerleo10/DocoLoco",
-      image: undefined as string | undefined,
-      animationImage: undefined as string | undefined,
+      image: "images/doco-loco.png",
+      animationImage: "images/doco-loco.png",
     },
   ];
 
@@ -191,7 +182,7 @@ const Projects = () => {
           </div>
 
           {/* Description + tags — fades in on change */}
-          <div key={activeIndex} className="animate-fade-in">
+          <div key={activeIndex} className="animate-fade-in min-h-[140px]">
             <a
               href={active.demo}
               target="_blank"

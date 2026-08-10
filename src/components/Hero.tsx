@@ -19,11 +19,11 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background snap-start">
       {/* Background image at low visibility */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.6] dark:hidden"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-[0.6] dark:hidden"
         style={{ backgroundImage: `url(${bgImageLight})` }}
       />
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.4] hidden dark:block"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-[0.4] hidden dark:block"
         style={{ backgroundImage: `url(${bgImageDark})` }}
       />
       {/* Warm overlay to preserve palette tone */}
@@ -57,7 +57,7 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
                 className="text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]"
               />
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-300">
-                Making sure solutions do not wake you up at 3AM
+                Making sure your solutions don't break at 3AM
               </p>
             </div>
             
