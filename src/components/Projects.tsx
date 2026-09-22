@@ -12,7 +12,7 @@ const Projects = () => {
   const projects = [
     {
       title: "ICTC Website and CMS",
-      description: "A modern, responsive Laravel-powered website for the ICT Commission of Tanzania. Features dynamic content management, media handling, and seamless government service integration.",
+      description: "A modern, responsive website for the ICT Commission of Tanzania, with dynamic content management, media handling, and seamless government service integration.",
       type: "development",
       tags: ["Design", "Content Management"],
       demo: "https://ictc.go.tz/",
@@ -21,7 +21,7 @@ const Projects = () => {
     },
     {
       title: "ICTC Event Management System (EMS)",
-      description: "A robust web platform for organizing, publishing, and managing ICT-related events and registrations across Tanzania. Includes dynamic content management, participant tracking, and admin workflows.",
+      description: "A robust web platform for organizing, publishing, and managing ICT-related events and registrations across Tanzania.",
       type: "development",
       tags: ["Design", "Development", "Architectural Consultation"],
       demo: "https://ems.ictc.go.tz/event",

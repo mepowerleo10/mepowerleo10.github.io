@@ -7,7 +7,7 @@ import bgImageDark from "@/assets/background-dark.png";
 import { Link } from "react-scroll";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { communication } from "@/lib/settings";
-import TypewriterEffect from "./ui/typewriter-effect";
+// import TypewriterEffect from "./ui/typewriter-effect";
 
 const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) => {
   const navRef = useRef<HTMLDivElement>(null);
@@ -34,9 +34,9 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
       <div className="absolute top-40 right-32 w-1.5 h-1.5 bg-secondary/35 rounded-full animate-drift-b" style={{ animationDelay: '-4s' }} />
       <div className="absolute bottom-32 left-16 w-2 h-2 bg-primary/20 rounded-full animate-drift-c" style={{ animationDelay: '-8s' }} />
       <div className="absolute top-1/3 right-16 w-1 h-1 bg-secondary/30 rounded-full animate-drift-d" style={{ animationDelay: '-2s' }} />
-      <div className="absolute bottom-1/4 right-40 w-2.5 h-2.5 bg-primary/15 rounded-full animate-drift-e" style={{ animationDelay: '-11s' }} />
+      {/* <div className="absolute bottom-1/4 right-40 w-2.5 h-2.5 bg-primary/15 rounded-full animate-drift-e" style={{ animationDelay: '-11s' }} />
       <div className="absolute top-2/3 left-1/3 w-1.5 h-1.5 bg-secondary/25 rounded-full animate-drift-b" style={{ animationDelay: '-6s' }} />
-      <div className="absolute top-1/4 left-1/2 w-1 h-1 bg-primary/30 rounded-full animate-drift-c" style={{ animationDelay: '-14s' }} />
+      <div className="absolute top-1/4 left-1/2 w-1 h-1 bg-primary/30 rounded-full animate-drift-c" style={{ animationDelay: '-14s' }} /> */}
 
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
@@ -47,18 +47,22 @@ const Hero = ({ setNavVisible }: { setNavVisible: (visible: boolean) => void }) 
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight animate-fade-in">
                 <span id="morph-title-hero" className="text-foreground">Mussa Mipawa Shomari</span>
               </h1>
-              <TypewriterEffect
+              {/* <TypewriterEffect
                 words={[
                   { text: "Engineer", className: "text-secondary" },
-                  { text: "Architect", className: "text-secondary" },
-                  { text: "Dreamer", className: "text-secondary" },
+                  { text: "Tinkerer", className: "text-secondary" },
                   { text: "Harbinger of Chaos", className: "text-secondary" },
                 ]}
                 className="text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]"
-              />
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-300">
-                Making sure your solutions don't break at 3AM
-              </p>
+              /> */}
+              <div className='flex justify-center lg:justify-start my-6 text-xl md:text-2xl mb-4 animate-fade-in delay-200 min-h-[2rem]'>
+                    <span className='text-muted-foreground'>
+                      Software Engineer
+                    </span>
+              </div>
+              {/* <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in delay-300">
+                Software Engineer
+              </p> */}
             </div>
             
             {/* Social links */}

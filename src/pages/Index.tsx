@@ -1,10 +1,8 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
-import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingNav from "@/components/FloatingNav";

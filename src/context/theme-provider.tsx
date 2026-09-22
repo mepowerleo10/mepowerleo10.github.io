@@ -26,9 +26,11 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  )
+  // Dark mode is permanent: ignore any stored preference.
+  // const [theme, setTheme] = useState<Theme>(
+  //   () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+  // )
+  const [theme] = useState<Theme>("dark")
 
   useEffect(() => {
     const root = window.document.documentElement
@@ -50,9 +52,10 @@ export function ThemeProvider({
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme)
-      setTheme(theme)
+    setTheme: () => {
+      // Theme switching disabled; always dark.
+      // localStorage.setItem(storageKey, theme)
+      // setTheme(theme)
     },
   }
 

@@ -1,9 +1,9 @@
 
 import { Link } from 'react-scroll';
-import { Home, User, Code, Briefcase, Mail, Presentation, Sun, Moon, Menu, X, LucideIcon } from 'lucide-react';
+import { Home, User, Code, Briefcase, Mail, Presentation, /* Sun, Moon, */ Menu, X, LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from "./ui/button";
-import { useTheme } from "@/context/theme-provider";
+// import { useTheme } from "@/context/theme-provider";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface FloatingNavProps {
@@ -13,7 +13,7 @@ interface FloatingNavProps {
 }
 
 const FloatingNav = ({ isNavVisible, showFloatingNav, setShowFloatingNav }: FloatingNavProps) => {
-  const { theme, setTheme } = useTheme();
+  // const { theme, setTheme } = useTheme();
   const isMobile = useIsMobile();
 
   const navItems: { to: string; icon: LucideIcon; label: string }[] = [
@@ -44,6 +44,7 @@ const FloatingNav = ({ isNavVisible, showFloatingNav, setShowFloatingNav }: Floa
             <span className="sr-only">Toggle navigation</span>
           </Button>
         )}
+        {/* Theme toggle disabled: dark mode is permanent
         <Button
           variant="ghost"
           size="icon"
@@ -54,6 +55,7 @@ const FloatingNav = ({ isNavVisible, showFloatingNav, setShowFloatingNav }: Floa
           <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-blue-500" />
           <span className="sr-only">Toggle theme</span>
         </Button>
+        */}
       </div>
 
       {/* Main Navigation - Controlled by isNavVisible and showFloatingNav */}
